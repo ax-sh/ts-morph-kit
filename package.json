@@ -1,5 +1,5 @@
 {
-  "name": "ts-morph-kit",
+  "name": "@ax-sh/ts-morph-kit",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
