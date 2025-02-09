@@ -26,3 +26,9 @@ export async function createMemorySourceFile(tempFile: string, input: string) {
 
   return sourceFile;
 }
+
+export async function createTestSourceFile(code: string) {
+  const resolvedPath = "test.ts";
+  const sourceFile = await createMemorySourceFile(resolvedPath, code);
+  return sourceFile;
+}
