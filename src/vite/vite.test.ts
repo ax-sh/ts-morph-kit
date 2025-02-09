@@ -37,7 +37,7 @@ describe("vitest config test", () => {
 
   test("should modify plugins without duplicates", async () => {
     const sf = await createTestSourceFile(code);
-    const modified = addVitePlugins(sf, ["dff()", "dff", "dff", ]);
+    const modified = addVitePlugins(sf, ["dff()", "dff", "dff"]);
 
     console.log(formatSourceFileToString(modified.getSourceFile()));
   });

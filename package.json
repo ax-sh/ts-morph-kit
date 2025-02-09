@@ -1,7 +1,9 @@
 {
   "name": "ts-morph-kit",
-  "module": "src/utils/index.ts",
   "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
   "exports": {
     "require": {
       "types": "./dist/index.d.cts",

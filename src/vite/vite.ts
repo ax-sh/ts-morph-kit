@@ -85,12 +85,12 @@ export function addVitePlugins(sourceFile: SourceFile, newPlugins: string[]) {
   }
   // Get the existing plugin names (to avoid duplicates)
   const existingPlugins = pluginsArray
-      .getElements()
-      .map((element) => element.getText().trim()); // Trim whitespace
+    .getElements()
+    .map((element) => element.getText().trim()); // Trim whitespace
 
   // Normalize and deduplicate new plugins
   const normalizedNewPlugins = Array.from(
-      new Set(newPlugins.map((plugin) => plugin.trim()))
+    new Set(newPlugins.map((plugin) => plugin.trim())),
   );
 
   // Add new plugins that are not already present
