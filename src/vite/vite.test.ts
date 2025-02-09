@@ -14,11 +14,13 @@ describe("vitest config test", () => {
         
         });
   ` as const;
-  it.todo("should load vite config", () => {
-    const config = getDefaultViteConfig();
+  it("should load vite config", async () => {
+    const sourceFile = await createTestSourceFile(code);
+    const config = getDefaultViteConfig(sourceFile);
     expect(config).toBeDefined();
     console.log(config);
   });
+
   it("should ", async () => {
     const sourceFile = await createTestSourceFile(code);
 

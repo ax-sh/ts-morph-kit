@@ -9,3 +9,7 @@ export function formatSourceFile(sourceFile: SourceFile) {
   });
   return sourceFile;
 }
+
+export function formatSourceFileToString(sourceFile: SourceFile) {
+  return formatSourceFile(sourceFile).getFullText();
+}
