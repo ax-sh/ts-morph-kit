@@ -61,3 +61,38 @@ export function getDefaultViteConfig(sourceFile: SourceFile) {
   }
   return configObject;
 }
+
+export function addVitePlugins(sourceFile: SourceFile, newPlugins: string[]) {
+  const configObject = getDefaultViteConfig(sourceFile);
+  // Find the `plugins` property in the object literal
+  const pluginsProperty = configObject.getProperty("plugins");
+  if (
+    !pluginsProperty ||
+    !pluginsProperty.isKind(SyntaxKind.PropertyAssignment)
+  ) {
+    throw new Error(
+      "`plugins` property not found in the `defineConfig` object.",
+    );
+  }
+
+  // Get the array literal of the `plugins` property
+  const pluginsArray = pluginsProperty.getInitializer();
+  if (
+    !pluginsArray ||
+    !pluginsArray.isKind(SyntaxKind.ArrayLiteralExpression)
+  ) {
+    throw new Error("`plugins` property is not initialized with an array.");
+  }
+  // Get the existing plugin names (to avoid duplicates)
+  const existingPlugins = pluginsArray
+    .getElements()
+    .map((element) => element.getText());
+
+  // Add new plugins that are not already present
+  for (const newPlugin of newPlugins) {
+    if (!existingPlugins.includes(newPlugin)) {
+      pluginsArray.addElement(newPlugin);
+    }
+  }
+  return sourceFile;
+}
