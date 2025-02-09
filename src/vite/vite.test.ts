@@ -1,11 +1,11 @@
 // import { expect, describe, it } from "bun:test";
 import { addVitePlugins, getDefaultViteConfig } from "./vite.ts";
-import { createTestSourceFile } from "../utils";
 import {
   formatSourceFile,
   formatSourceFileToString,
 } from "../utils/format-source-file.ts";
 import { findDefaultExport } from "../utils/find-default-export.ts";
+import { createTestSourceFile } from "../utils/test-utils.ts";
 
 describe("vitest config test", () => {
   const code = `
