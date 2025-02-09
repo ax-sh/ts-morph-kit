@@ -12,7 +12,7 @@ describe("vitest config test", () => {
         import { defineConfig } from 'vite';
         // https://vite.dev/config/
         export default defineConfig({
-        plugins:[]
+        plugins:[foo()]
         });
   ` as const;
   it("should load vite config", async () => {
@@ -37,7 +37,7 @@ describe("vitest config test", () => {
 
   test("should modify plugins without duplicates", async () => {
     const sf = await createTestSourceFile(code);
-    const modified = addVitePlugins(sf, ["dff", "daff"]);
+    const modified = addVitePlugins(sf, ["dff()", "dff", "dff", ]);
 
     console.log(formatSourceFileToString(modified.getSourceFile()));
   });
