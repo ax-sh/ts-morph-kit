@@ -1,5 +1,9 @@
 // import { expect, describe, it } from "bun:test";
-import { addVitePlugins, getDefaultViteConfig } from "./vite.ts";
+import {
+  addBaseProperty,
+  addVitePlugins,
+  getDefaultViteConfig,
+} from "./vite.ts";
 import {
   formatSourceFile,
   formatSourceFileToString,
@@ -13,6 +17,7 @@ describe("vitest config test", () => {
         // https://vite.dev/config/
         export default defineConfig({
         plugins:[foo()]
+        base:"test"
         });
   ` as const;
   it("should load vite config", async () => {
@@ -38,6 +43,12 @@ describe("vitest config test", () => {
   test("should modify plugins without duplicates", async () => {
     const sf = await createTestSourceFile(code);
     const modified = addVitePlugins(sf, ["dff()", "dff", "dff"]);
+
+    console.log(formatSourceFileToString(modified.getSourceFile()));
+  });
+  test("should modify addBaseProperty without duplicates", async () => {
+    const sf = await createTestSourceFile(code);
+    const modified = addBaseProperty(sf, "voo");
 
     console.log(formatSourceFileToString(modified.getSourceFile()));
   });

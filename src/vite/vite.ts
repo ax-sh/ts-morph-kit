@@ -1,5 +1,10 @@
 import { findDefaultExport } from "../utils/find-default-export.ts";
-import { CallExpression, type SourceFile, SyntaxKind } from "ts-morph";
+import {
+  CallExpression,
+  SyntaxKind,
+  type ObjectLiteralExpression,
+  type SourceFile,
+} from "ts-morph";
 
 export class NotAFunctionCallError extends Error {
   constructor() {
@@ -59,6 +64,35 @@ export function getDefaultViteConfig(sourceFile: SourceFile) {
   ) {
     throw new InvalidArgumentTypeError(funcName);
   }
+  return configObject;
+}
+
+export function upsertProperty(
+  configObject: ObjectLiteralExpression,
+  property: string,
+  value: string,
+) {
+  // Check if the `base` property exists
+  const baseProperty = configObject.getProperty(property);
+  if (baseProperty?.isKind(SyntaxKind.PropertyAssignment)) {
+    // Update the existing `base` property
+    baseProperty.setInitializer(`"${value}"`);
+  } else {
+    // Add the `base` property if it doesn't exist
+    // console.log(
+    //   `${property} property not found. Adding it with the specified value.`,
+    // );
+    configObject.addPropertyAssignment({
+      name: property,
+      initializer: `"${value}"`, // Set the specified value for `base`
+    });
+  }
+}
+
+export function addBaseProperty(sourceFile: SourceFile, value: string) {
+  const configObject = getDefaultViteConfig(sourceFile);
+  upsertProperty(configObject, "base", "doo");
+
   return configObject;
 }
 
