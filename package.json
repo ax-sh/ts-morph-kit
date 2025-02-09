@@ -1,17 +1,20 @@
 {
-	"name": "ts-morph-kit",
-	"module": "src/index.ts",
-	"type": "module",
-	"devDependencies": {
-		"@biomejs/biome": "1.9.4",
-		"@types/bun": "latest"
-	},
-	"peerDependencies": {
-		"typescript": "^5.0.0"
-	},
-	"scripts": {
-		"lint": "bunx biome lint --write",
-		"format": "bunx biome format --write",
-		"check": "bunx biome check"
-	}
+  "name": "ts-morph-kit",
+  "module": "src/index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "lint": "bunx biome lint --write",
+    "format": "bunx biome format --write",
+    "check": "bunx biome check"
+  },
+  "dependencies": {
+    "ts-morph": "^25.0.1"
+  }
 }
