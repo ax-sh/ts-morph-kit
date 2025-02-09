@@ -1,10 +1,12 @@
 {
   "name": "ts-morph-kit",
-  "module": "src/index.ts",
+  "module": "src/utils/index.ts",
   "type": "module",
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "dotenv-cli": "^8.0.0",
+    "vitest": "^3.0.5"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
@@ -12,7 +14,11 @@
   "scripts": {
     "lint": "bunx biome lint --write",
     "format": "bunx biome format --write",
-    "check": "bunx biome check"
+    "check": "bunx biome check",
+    "test": "dotenv -- vitest run",
+    "test:watch": "vitest",
+    "test:snapupdate": "vitest -u",
+    "coverage": "vitest run --coverage"
   },
   "dependencies": {
     "ts-morph": "^25.0.1"

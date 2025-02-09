@@ -1,19 +1,6 @@
-import { Project, type ProjectOptions, ScriptKind } from "ts-morph";
+import { ScriptKind } from "ts-morph";
 import path from "node:path";
-
-export function createProject(options?: ProjectOptions) {
-  const project = new Project({
-    compilerOptions: {},
-    ...options,
-  });
-  return project;
-}
-export function openAsSourceFile(filePath: string) {
-  const project = createProject();
-  const sourceFile = project.addSourceFileAtPath(filePath);
-
-  return sourceFile;
-}
+import { createProject } from "./create-project.ts";
 
 export async function createMemorySourceFile(tempFile: string, input: string) {
   const project = createProject({ useInMemoryFileSystem: true });
