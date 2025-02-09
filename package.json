@@ -6,6 +6,8 @@
     "@biomejs/biome": "1.9.4",
     "@types/bun": "latest",
     "dotenv-cli": "^8.0.0",
+    "pkgroll": "^2.8.2",
+    "rimraf": "^6.0.1",
     "vitest": "^3.0.5"
   },
   "peerDependencies": {
@@ -18,7 +20,10 @@
     "test": "dotenv -- vitest run",
     "test:watch": "vitest",
     "test:snapupdate": "vitest -u",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "pub": "nr prepublishOnly && npm publish --scope=@ax-sh --registry=https://npm.pkg.github.com",
+    "pub:dry": "nr pub --dry-run",
+    "clean": "rimraf dist"
   },
   "dependencies": {
     "ts-morph": "^25.0.1"

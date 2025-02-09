@@ -3,6 +3,8 @@ import { getDefaultViteConfig } from "./vite.ts";
 import { createTestSourceFile } from "../utils";
 import { formatSourceFile } from "../utils/format-source-file.ts";
 import { findDefaultExport } from "../utils/find-default-export.ts";
+import { SyntaxKind } from "ts-morph";
+import { expect } from "vitest";
 
 describe("vitest config test", () => {
   const code = `
@@ -21,7 +23,12 @@ describe("vitest config test", () => {
     const sourceFile = await createTestSourceFile(code);
 
     const exportedExpression = findDefaultExport(sourceFile);
-    console.log("Exported Expression:", exportedExpression.getText());
-    console.log(formatSourceFile(sourceFile).getFullText());
+
+    const functionName = exportedExpression.getText();
+    const formatted = formatSourceFile(sourceFile).getFullText();
+    console.log(formatted);
+    expect(exportedExpression.getText()).toContain("defineConfig({");
+    console.log("Exported Expression:");
+    // console.log();
   });
 });
