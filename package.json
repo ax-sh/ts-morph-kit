@@ -16,9 +16,13 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
+    "@release-it/conventional-changelog": "^10.0.0",
     "@types/bun": "latest",
     "dotenv-cli": "^8.0.0",
+    "git-cliff": "^2.8.0",
+    "is-ci": "^4.1.0",
     "pkgroll": "^2.8.2",
+    "release-it": "^18.1.2",
     "rimraf": "^6.0.1",
     "vitest": "^3.0.5"
   },
@@ -36,7 +40,9 @@
     "pub": "nr prepublishOnly && npm publish --scope=@ax-sh --registry=https://npm.pkg.github.com",
     "pub:dry": "nr pub --dry-run",
     "clean": "rimraf dist",
-    "build": "pkgroll"
+    "build": "pkgroll",
+    "release": "dotenv -v DEBUG=1 release-it -- minor --no-git.push --no-git.requireUpstream --ci",
+    "changelog:latest": "nr git-cliff -l"
   },
   "dependencies": {
     "ts-morph": "^25.0.1"
