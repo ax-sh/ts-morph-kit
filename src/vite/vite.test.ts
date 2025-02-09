@@ -20,6 +20,18 @@ describe("vitest config test", () => {
         base:"test"
         });
   ` as const;
+  test("should handle empty configuration objects", async () => {
+    const code = `
+      import { defineConfig } from 'vite';
+      export default defineConfig({});
+    `;
+    const sourceFile = await createTestSourceFile(code);
+    const modifiedSourceFile = addBaseProperty(sourceFile, "/new-base");
+
+    const result = formatSourceFileToString(modifiedSourceFile.getSourceFile());
+    expect(result).toContain(`base: "/new-base"`);
+    expect(result).toMatchSnapshot(); // Optional: Use snapshots for regression testing
+  });
   it("should load vite config", async () => {
     const sourceFile = await createTestSourceFile(code);
     const config = getDefaultViteConfig(sourceFile);
