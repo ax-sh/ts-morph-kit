@@ -1,10 +1,11 @@
 import { type SourceFile, ts } from "ts-morph";
-import SemicolonPreference = ts.SemicolonPreference;
-
+// import SemicolonPreference = ts.SemicolonPreference;
+//
 export function formatSourceFile(sourceFile: SourceFile) {
   sourceFile.formatText({
     indentSize: 2,
-    semicolons: SemicolonPreference.Insert,
+    // biome-ignore lint/complexity/useLiteralKeys: <explanation>
+    semicolons: ts["SemicolonPreference"]["Insert"],
     convertTabsToSpaces: true,
   });
   return sourceFile;
