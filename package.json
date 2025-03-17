@@ -40,6 +40,7 @@
     "pub": "nr prepublishOnly && npm publish --scope=@ax-sh --registry=https://npm.pkg.github.com",
     "gh:pub": "NPM_CONFIG_REGISTRY=\"https://npm.pkg.github.com/\" npm publish --//npm.pkg.github.com/:_authToken=\"$(gh auth token)\"",
     "pub:dry": "nr pub --dry-run",
+    "gh:publish": "repo npm publish",
     "clean": "rimraf dist",
     "build": "pkgroll",
     "release": "dotenv -v DEBUG=1 release-it -- minor --no-git.push --no-git.requireUpstream --ci",
