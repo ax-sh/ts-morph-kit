@@ -6,8 +6,15 @@ All notable changes to this project will be documented in this file.
 
 ### ⚙️ Miscellaneous Tasks
 
+- Format files before release
+
+## [0.3.0] - 2025-03-17
+
+### ⚙️ Miscellaneous Tasks
+
 - Update release-it configuration and package scripts
 - Format files before release
+- Add CHANGELOG
 
 ## [0.2.0] - 2025-03-17
 
