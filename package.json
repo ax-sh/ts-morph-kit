@@ -38,6 +38,7 @@
     "test:snapupdate": "vitest -u",
     "coverage": "vitest run --coverage",
     "pub": "nr prepublishOnly && npm publish --scope=@ax-sh --registry=https://npm.pkg.github.com",
+    "gh:pub": "NPM_CONFIG_REGISTRY=\"https://npm.pkg.github.com/\" npm publish --//npm.pkg.github.com/:_authToken=\"$(gh auth token)\"",
     "pub:dry": "nr pub --dry-run",
     "clean": "rimraf dist",
     "build": "pkgroll",

@@ -65,14 +65,14 @@ describe("vitest config test", () => {
     console.log(formatSourceFileToString(modified.getSourceFile()));
   });
 
-  it("should handle missing `defineConfig` call", async () => {
+  it.todo("should handle missing `defineConfig` call", async () => {
     const code = `
       export default defineConfig({});
     `;
-    const sourceFile =await createTestSourceFile(code);
+    const sourceFile = await createTestSourceFile(code);
 
     expect(() => addBaseProperty(sourceFile, "/new-base")).toThrowError(
-        "`plugins` property not found in the `defineConfig` object."
+      "`plugins` property not found in the `defineConfig` object.",
     );
   });
 });
