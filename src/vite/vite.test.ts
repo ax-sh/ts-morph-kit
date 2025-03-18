@@ -1,14 +1,9 @@
 // import { expect, describe, it } from "bun:test";
 import { findDefaultExport } from "../utils/find-default-export.ts";
-import {
-  formatSourceFileToString,
-} from "../utils/format-source-file.ts";
+import { formatSourceFileToString } from "../utils/format-source-file.ts";
 import { getFunctionNameFromExpression } from "../utils/get-function-name-from-expression.ts";
 import { createTestSourceFile } from "../utils/test-utils.ts";
-import {
-  addBaseProperty,
-  getDefaultViteConfig,
-} from "./vite.ts";
+import { addBaseProperty, getDefaultViteConfig } from "./vite.ts";
 
 describe("vitest config test", () => {
   const code = `

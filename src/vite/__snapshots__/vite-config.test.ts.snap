@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`openAsSourceFile mock > should test formatting logic to source file 1`] = `
+"import { defineConfig } from 'vite';
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [foo()],
+  base: "test"
+});
+"
+`;

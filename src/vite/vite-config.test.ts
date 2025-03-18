@@ -1,5 +1,8 @@
 import { openAsSourceFile } from "../core/create-project.ts";
-import { formatSourceFile, formatSourceFileToString } from "../utils/format-source-file.ts";
+import {
+  formatSourceFile,
+  formatSourceFileToString,
+} from "../utils/format-source-file.ts";
 import { createTestSourceFile } from "../utils/test-utils.ts";
 import { addBaseProperty, addVitePlugins } from "./vite.ts";
 
@@ -57,9 +60,9 @@ describe("openAsSourceFile mock", () => {
   it.todo("should modify plugins without duplicates", async () => {
     const sf = openAsSourceFile("test.ts");
     const modified = addVitePlugins(sf, ["dff()", "dff", "dff"]);
-    sf.formatText()
-    const before = sf.getText()
-    modified.formatText()
+    sf.formatText();
+    const before = sf.getText();
+    modified.formatText();
     const formatted = formatSourceFileToString(modified.getSourceFile());
 
     expect(before).toBe(formatted);
