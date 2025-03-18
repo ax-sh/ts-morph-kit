@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### ⚙️ Miscellaneous Tasks
+
+- Update package.json dependencies and scripts
+- Format files before release
+
+## [0.5.0] - 2025-03-18
+
 ### 💼 Other
 
 - Update build script to include sourcemap option
@@ -11,6 +18,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format files before release
+- Add CHANGELOG
 
 ## [0.4.0] - 2025-03-17
 
