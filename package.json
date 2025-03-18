@@ -1,35 +1,23 @@
 {
   "name": "@ax-sh/ts-morph-kit",
   "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.cts",
+  "version": "0.6.0",
   "exports": {
-    "require": {
-      "types": "./dist/index.d.cts",
-      "default": "./dist/index.cjs"
-    },
     "import": {
       "types": "./dist/index.d.mts",
       "default": "./dist/index.mjs"
+    },
+    "require": {
+      "types": "./dist/index.d.cts",
+      "default": "./dist/index.cjs"
     }
   },
-  "devDependencies": {
-    "@biomejs/biome": "1.9.4",
-    "@release-it/conventional-changelog": "^10.0.0",
-    "@types/bun": "latest",
-    "dotenv-cli": "^8.0.0",
-    "git-cliff": "^2.8.0",
-    "is-ci": "^4.1.0",
-    "oxlint": "^0.16.0",
-    "pkgroll": "^2.11.2",
-    "release-it": "^18.1.2",
-    "rimraf": "^6.0.1",
-    "vitest": "^3.0.9"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
-  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "lint": "bunx biome lint --write",
     "format": "bunx biome format --write",
@@ -49,11 +37,26 @@
     "upp": "bunx npm-check-updates -i",
     "ox": "nr oxlint"
   },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
   "dependencies": {
     "ts-morph": "^25.0.1"
   },
-  "version": "0.6.0",
-  "files": [
-    "dist"
-  ]
+  "devDependencies": {
+    "@antfu/eslint-config": "^4.10.1",
+    "@biomejs/biome": "1.9.4",
+    "@release-it/conventional-changelog": "^10.0.0",
+    "@types/bun": "latest",
+    "dotenv-cli": "^8.0.0",
+    "eslint": "^9.22.0",
+    "eslint-plugin-format": "^1.0.1",
+    "git-cliff": "^2.8.0",
+    "is-ci": "^4.1.0",
+    "oxlint": "^0.16.0",
+    "pkgroll": "^2.11.2",
+    "release-it": "^18.1.2",
+    "rimraf": "^6.0.1",
+    "vitest": "^3.0.9"
+  }
 }

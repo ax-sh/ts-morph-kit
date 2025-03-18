@@ -1,16 +1,17 @@
-import { Project, type ProjectOptions } from "ts-morph";
+import type { ProjectOptions } from "ts-morph"
+import { Project } from "ts-morph"
 
 export function createProject(options?: ProjectOptions) {
   const project = new Project({
     compilerOptions: {},
     ...options,
-  });
-  return project;
+  })
+  return project
 }
 
 export function openAsSourceFile(filePath: string) {
-  const project = createProject();
-  const sourceFile = project.addSourceFileAtPath(filePath);
+  const project = createProject()
+  const sourceFile = project.addSourceFileAtPath(filePath)
 
-  return sourceFile;
+  return sourceFile
 }

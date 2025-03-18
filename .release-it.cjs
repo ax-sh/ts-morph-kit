@@ -4,7 +4,7 @@
  @gen token with scope https://github.com/settings/tokens/new?scopes=repo&description=release-it
  NOTE use .cjs or .js for this config .mjs does not work
  @docs docs https://github.com/release-it/release-it/blob/main/docs/configuration.md
- **/
+ */
 
 /** @type {import('release-it').Config} */
 module.exports = {
@@ -41,7 +41,7 @@ module.exports = {
   hooks: {
     "before:init": [
       "nr format",
-      'git commit --allow-empty -am "ci: format files before release"',
+      "git commit --allow-empty -am \"ci: format files before release\"",
       "nr lint",
     ],
     "before:beforeBump": [
@@ -49,14 +49,14 @@ module.exports = {
     ],
     "after:bump": [
       "nr git-cliff -o CHANGELOG.md && git add CHANGELOG.md",
-      'git commit  --allow-empty -am "ci: add CHANGELOG"',
+      "git commit  --allow-empty -am \"ci: add CHANGELOG\"",
       "echo \uD83D\uDC4A ${name} after:bump version=v${version} latestVersion=v${latestVersion}",
     ],
     "after:release": [
       "echo \uD83D\uDE4C Successfully released ${name} v${version} to ${repo.repository}.",
-      'nr is-ci && echo "running in ci" || git push origin HEAD',
+      "nr is-ci && echo \"running in ci\" || git push origin HEAD",
       "git push origin refs/heads/master:master",
       // 'git push origin refs/heads/develop:develop',
     ],
   },
-};
+}
