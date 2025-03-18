@@ -4,10 +4,32 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🚀 Features
+
+- Add function name extraction utility and tests
+
+### 🚜 Refactor
+
+- Update changelog command and eslint config format
+- Move create-project to core directory
+
+### 🎨 Styling
+
+- Standardize code formatting and spacing throughout
+- Remove commented lines in format-source-file.ts
+
+### ⚙️ Miscellaneous Tasks
+
+- Simplify publish scripts in package.json
+- Format files before release
+
+## [0.6.0] - 2025-03-18
+
 ### ⚙️ Miscellaneous Tasks
 
 - Update package.json dependencies and scripts
 - Format files before release
+- Add CHANGELOG
 
 ## [0.5.0] - 2025-03-18
 
