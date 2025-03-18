@@ -1,9 +1,5 @@
 import type { ObjectLiteralExpression, SourceFile } from "ts-morph"
-import {
-  CallExpression,
-
-  SyntaxKind,
-} from "ts-morph"
+import { CallExpression, SyntaxKind } from "ts-morph"
 import { findDefaultExport } from "../utils/find-default-export.ts"
 
 export class NotAFunctionCallError extends Error {

@@ -15,8 +15,7 @@ module.exports = {
     publish: false,
   },
   git: {
-    // changelog: 'git log --pretty=format:"* %s (%h)" ${from}...${to}',
-    changelog: "nr git-cliff --unreleased --strip all",
+    changelog: 'nr git-cliff --unreleased --strip all | sed "1d"',
     requireCleanWorkingDir: true,
     requireBranch: false,
     requireUpstream: true,
@@ -41,7 +40,7 @@ module.exports = {
   hooks: {
     "before:init": [
       "nr format",
-      "git commit --allow-empty -am \"ci: format files before release\"",
+      'git commit --allow-empty -am "ci: format files before release"',
       "nr lint",
     ],
     "before:beforeBump": [
@@ -49,13 +48,14 @@ module.exports = {
     ],
     "after:bump": [
       "nr git-cliff -o CHANGELOG.md && git add CHANGELOG.md",
-      "git commit  --allow-empty -am \"ci: add CHANGELOG\"",
+      'git commit  --allow-empty -am "ci: add CHANGELOG"',
       "echo \uD83D\uDC4A ${name} after:bump version=v${version} latestVersion=v${latestVersion}",
     ],
     "after:release": [
       "echo \uD83D\uDE4C Successfully released ${name} v${version} to ${repo.repository}.",
-      "nr is-ci && echo \"running in ci\" || git push origin HEAD",
+      'nr is-ci && echo "running in ci" || git push origin HEAD',
       "git push origin refs/heads/master:master",
+      "nr gh:pub",
       // 'git push origin refs/heads/develop:develop',
     ],
   },

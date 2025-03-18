@@ -3,7 +3,6 @@ import { findDefaultExport } from "../utils/find-default-export.ts"
 import {
   formatSourceFile,
   formatSourceFileToString,
-
 } from "../utils/format-source-file.ts"
 import { getFunctionNameFromExpression } from "../utils/get-function-name-from-expression.ts"
 import { createTestSourceFile } from "../utils/test-utils.ts"
@@ -60,11 +59,16 @@ describe("vitest config test", () => {
 
     console.warn(formatted)
   })
-  it("should modify addBaseProperty without duplicates", async () => {
+  it("[addBaseProperty] modify base without duplicates", async () => {
     const sf = await createTestSourceFile(code)
     const modified = addBaseProperty(sf, "voo")
+    const formatted = formatSourceFileToString(modified.getSourceFile())
+    // Assert that the base property is added correctly
+    expect(formatted).toContain('base: "voo"')
 
-    console.log(formatSourceFileToString(modified.getSourceFile()))
+    // Assert that the base property is not duplicated
+    const basePropertyCount = (formatted.match(/base:/g) || []).length
+    expect(basePropertyCount).toBe(1)
   })
 
   it.todo("should handle missing `defineConfig` call", async () => {
