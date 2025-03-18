@@ -19,7 +19,9 @@
     "dist"
   ],
   "scripts": {
-    "lint": "bunx biome lint --write",
+    "lint": "eslint",
+    "lint:fix": "nr lint --fix",
+    "bio": "bunx biome lint --write",
     "format": "bunx biome format --write",
     "check": "bunx biome check",
     "test": "dotenv -- vitest run",
