@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 💼 Other
+
+- Add build command to release-it configuration
+
+### ⚙️ Miscellaneous Tasks
+
+- Format files before release
+
+## [0.7.0] - 2025-03-18
+
 ### 🚀 Features
 
 - Add function name extraction utility and tests
@@ -22,6 +32,7 @@ All notable changes to this project will be documented in this file.
 
 - Simplify publish scripts in package.json
 - Format files before release
+- Add CHANGELOG
 
 ## [0.6.0] - 2025-03-18
 
