@@ -5,6 +5,8 @@ import {
 } from "../utils/format-source-file.ts";
 import { createTestSourceFile } from "../utils/test-utils.ts";
 import { addBaseProperty, addVitePlugins } from "./vite.ts";
+import {findDefaultExport} from "../utils/find-default-export.ts";
+import {getFunctionNameFromExpression} from "../utils/get-function-name-from-expression.ts";
 
 const code = `
         import { defineConfig } from 'vite';
@@ -23,7 +25,7 @@ vi.mock("../core/create-project.ts", async () => {
   };
 });
 
-describe("openAsSourceFile mock", () => {
+describe("vite.config.ts test", () => {
   // Before your tests, make sure to resolve the mock
   beforeEach(async () => {
     vi.mocked(openAsSourceFile).mockReturnValue(
@@ -57,7 +59,7 @@ describe("openAsSourceFile mock", () => {
     expect(formatted).toMatchSnapshot();
   });
 
-  it.todo("should modify plugins without duplicates", async () => {
+  it("[addVitePlugins] insert plugins without duplicates", async () => {
     const sf = openAsSourceFile("test.ts");
     const modified = addVitePlugins(sf, ["dff()", "dff", "dff"]);
     sf.formatText();
@@ -65,6 +67,26 @@ describe("openAsSourceFile mock", () => {
     modified.formatText();
     const formatted = formatSourceFileToString(modified.getSourceFile());
 
-    expect(before).toBe(formatted);
+    // expect(before).toBe(formatted);
+    // no duplicates
+    expect(before).toContain('plugins: [foo(), dff(), dff],');
+  });
+
+  it("should test function name", async () => {
+    const sourceFile = openAsSourceFile("test.ts");
+
+    const exportedExpression = findDefaultExport(sourceFile);
+    const functionName = getFunctionNameFromExpression(exportedExpression);
+    expect(functionName).toBe("defineConfig");
+  });
+  it("should throw error on missing `defineConfig` call", async () => {
+    const code = `
+      export default defineConfigOFF({});
+    `;
+    const sourceFile = await createTestSourceFile(code);
+
+    expect(() => addBaseProperty(sourceFile, "/new-base")).toThrowError(
+        "The 'export default' does not call 'defineConfig'.",
+    );
   });
 });

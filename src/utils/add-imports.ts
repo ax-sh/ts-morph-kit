@@ -6,6 +6,11 @@ interface TsImports {
   moduleSpecifier: string
 }
 
+export interface TsFileImports {
+  imports: string | string[]
+  from: string
+}
+
 /**
  * Adds import declarations to a TypeScript source file while avoiding duplicates
  * @param sourceFile - The SourceFile object to modify (from ts-morph or similar AST library)
@@ -60,11 +65,6 @@ export function addImports(sourceFile: SourceFile, imports: TsImports[]) {
       })
     }
   }
-}
-
-export interface TsFileImports {
-  imports: string | string[]
-  from: string
 }
 
 /**

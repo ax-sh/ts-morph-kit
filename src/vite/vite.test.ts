@@ -32,22 +32,7 @@ describe("vitest config test", () => {
     expect(config).toBeDefined();
   });
 
-  it("should test function name", async () => {
-    const sourceFile = await createTestSourceFile(code);
 
-    const exportedExpression = findDefaultExport(sourceFile);
-    const functionName = getFunctionNameFromExpression(exportedExpression);
-    expect(functionName).toBe("defineConfig");
-  });
 
-  it.todo("should handle missing `defineConfig` call", async () => {
-    const code = `
-      export default defineConfig({});
-    `;
-    const sourceFile = await createTestSourceFile(code);
 
-    expect(() => addBaseProperty(sourceFile, "/new-base")).toThrowError(
-      "`plugins` property not found in the `defineConfig` object.",
-    );
-  });
 });
