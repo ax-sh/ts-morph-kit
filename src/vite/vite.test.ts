@@ -1,10 +1,10 @@
+// import { expect, describe, it } from "bun:test";
 import { findDefaultExport } from "../utils/find-default-export.ts"
 import {
   formatSourceFile,
   formatSourceFileToString,
 } from "../utils/format-source-file.ts"
 import { createTestSourceFile } from "../utils/test-utils.ts"
-// import { expect, describe, it } from "bun:test";
 import {
   addBaseProperty,
   addVitePlugins,
