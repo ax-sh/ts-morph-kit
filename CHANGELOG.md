@@ -6,6 +6,16 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Add function to manage TypeScript imports
+
+### ⚙️ Miscellaneous Tasks
+
+- Format files before release
+
+## [0.10.0] - 2025-03-18
+
+### 🚀 Features
+
 - Add function to import TypeScript files with imports
 
 ### 🧪 Testing
@@ -15,6 +25,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format files before release
+- Add CHANGELOG
 
 ## [0.9.0] - 2025-03-18
 
