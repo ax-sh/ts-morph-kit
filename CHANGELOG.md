@@ -6,11 +6,22 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- *(vite)* Update tests and improve import handling logic
+
+### ⚙️ Miscellaneous Tasks
+
+- Format files before release
+
+## [0.11.0] - 2025-03-18
+
+### 🚀 Features
+
 - Add function to manage TypeScript imports
 
 ### ⚙️ Miscellaneous Tasks
 
 - Format files before release
+- Add CHANGELOG
 
 ## [0.10.0] - 2025-03-18
 
