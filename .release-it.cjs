@@ -40,7 +40,7 @@ module.exports = {
   hooks: {
     "before:init": [
       "nr format",
-      "nr lint",
+      "eslint --fix",
       "nr test",
       'git commit --allow-empty -am "ci: format files before release"',
     ],
