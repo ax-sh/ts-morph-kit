@@ -18,7 +18,7 @@
   "files": ["dist"],
   "scripts": {
     "lint": "eslint",
-    "lint:fix": "nr lint --fix",
+    "lint:fix": "eslint --fix",
     "bio": "bunx biome lint --write",
     "format": "bunx biome format --write",
     "check": "bunx biome check",
