@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🚀 Features
+
+- Add function to import TypeScript files with imports
+
+### 🧪 Testing
+
+- *(vite)* Add tests for openAsSourceFile mock behavior
+
+### ⚙️ Miscellaneous Tasks
+
+- Format files before release
+
+## [0.9.0] - 2025-03-18
+
 ### 🎨 Styling
 
 - Fix formatting and remove unnecessary semicolons
@@ -17,6 +31,7 @@ All notable changes to this project will be documented in this file.
 - Lint remove semi columns
 - Lint remove semi columns
 - Format files before release
+- Add CHANGELOG
 
 ## [0.8.0] - 2025-03-18
 
