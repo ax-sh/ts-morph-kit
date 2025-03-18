@@ -1,7 +1,6 @@
 // import { expect, describe, it } from "bun:test";
 import { findDefaultExport } from "../utils/find-default-export.ts";
 import {
-  formatSourceFile,
   formatSourceFileToString,
 } from "../utils/format-source-file.ts";
 import { getFunctionNameFromExpression } from "../utils/get-function-name-from-expression.ts";

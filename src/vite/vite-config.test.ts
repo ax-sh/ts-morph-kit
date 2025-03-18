@@ -1,5 +1,5 @@
 import { openAsSourceFile } from "../core/create-project.ts";
-import {formatSourceFile, formatSourceFileToString} from "../utils/format-source-file.ts";
+import { formatSourceFile, formatSourceFileToString } from "../utils/format-source-file.ts";
 import { createTestSourceFile } from "../utils/test-utils.ts";
 import { addBaseProperty, addVitePlugins } from "./vite.ts";
 
@@ -47,12 +47,12 @@ describe("openAsSourceFile mock", () => {
     const basePropertyCount = (formatted.match(/base:/g) || []).length;
     expect(basePropertyCount).toBe(1);
   });
-    it("should test formatting logic to source file", async () => {
-        const sourceFile = openAsSourceFile("test.ts");
-        expect(openAsSourceFile).toHaveBeenCalledWith("test.ts");
-        const formatted = formatSourceFile(sourceFile).getText();
-        expect(formatted).toMatchSnapshot();
-    });
+  it("should test formatting logic to source file", async () => {
+    const sourceFile = openAsSourceFile("test.ts");
+    expect(openAsSourceFile).toHaveBeenCalledWith("test.ts");
+    const formatted = formatSourceFile(sourceFile).getText();
+    expect(formatted).toMatchSnapshot();
+  });
 
   it.todo("should modify plugins without duplicates", async () => {
     const sf = openAsSourceFile("test.ts");

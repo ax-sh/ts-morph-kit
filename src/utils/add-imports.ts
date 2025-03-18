@@ -62,6 +62,8 @@ export function addImports(sourceFile: SourceFile, imports: TsImports[]) {
   }
 }
 
+export interface TsFileImports { imports: string | string[], from: string }
+
 /**
  * Adds import statements to a TypeScript source file while preventing duplicates
  * @param sourceFile - Source file object to modify (ts-morph or similar AST library)
@@ -82,7 +84,7 @@ export function addImports(sourceFile: SourceFile, imports: TsImports[]) {
  */
 export function addImportsToSourceFile(
   sourceFile: SourceFile,
-  imports: { imports: string | string[], from: string }[],
+  imports: TsFileImports[],
 ) {
   const modified = imports.map<TsImports>(({ from, imports }) => {
     if (Array.isArray(imports)) {
