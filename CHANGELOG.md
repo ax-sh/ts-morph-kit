@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🎨 Styling
+
+- Fix formatting and remove unnecessary semicolons
+- Fix formatting and remove unnecessary semicolons
+- Format code and fix import statements
+
+### ⚙️ Miscellaneous Tasks
+
+- Format files before release
+- Format files before release
+- Lint remove semi columns
+- Lint remove semi columns
+- Format files before release
+
+## [0.8.0] - 2025-03-18
+
 ### 💼 Other
 
 - Add build command to release-it configuration
@@ -11,6 +27,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format files before release
+- Add CHANGELOG
 
 ## [0.7.0] - 2025-03-18
 
