@@ -4,9 +4,20 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 💼 Other
+
+- Update build script to include sourcemap option
+
 ### ⚙️ Miscellaneous Tasks
 
 - Format files before release
+
+## [0.4.0] - 2025-03-17
+
+### ⚙️ Miscellaneous Tasks
+
+- Format files before release
+- Add CHANGELOG
 
 ## [0.3.0] - 2025-03-17
 
