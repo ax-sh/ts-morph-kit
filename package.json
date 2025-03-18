@@ -22,10 +22,10 @@
     "git-cliff": "^2.8.0",
     "is-ci": "^4.1.0",
     "oxlint": "^0.16.0",
-    "pkgroll": "^2.8.2",
+    "pkgroll": "^2.11.2",
     "release-it": "^18.1.2",
     "rimraf": "^6.0.1",
-    "vitest": "^3.0.5"
+    "vitest": "^3.0.9"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
@@ -45,10 +45,13 @@
     "build": "pkgroll --clean-dist --sourcemap",
     "clean": "rimraf dist",
     "release": "dotenv -v DEBUG=1 release-it -- minor --no-git.push --no-git.requireUpstream --ci",
-    "changelog:latest": "nr git-cliff -l"
+    "changelog:latest": "nr git-cliff -l",
+    "upp": "bunx npm-check-updates -i",
+    "ox": "nr oxlint"
   },
   "dependencies": {
     "ts-morph": "^25.0.1"
   },
-  "version": "0.5.0"
+  "version": "0.5.0",
+  "files": ["dist"]
 }
