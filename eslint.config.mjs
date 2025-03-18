@@ -6,7 +6,11 @@ export default antfu({
   stylistic: {
     semi: false,
     quotes: "double",
+
   },
 }, {
-
+  files: [".release-it.cjs"],
+  rules: {
+    "no-template-curly-in-string": "off",
+  },
 })

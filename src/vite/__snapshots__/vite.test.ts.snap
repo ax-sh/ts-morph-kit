@@ -8,3 +8,23 @@ export default defineConfig({
 });
 "
 `;
+
+exports[`vitest config test > should test formatting logic to source file 1`] = `
+"import { defineConfig } from 'vite';
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [foo()],
+  base: "test"
+});
+"
+`;
+
+exports[`vitest config test > should test formatting logic to sourse file 1`] = `
+"import { defineConfig } from 'vite';
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [foo()],
+  base: "test"
+});
+"
+`;

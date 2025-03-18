@@ -3,7 +3,9 @@ import { findDefaultExport } from "../utils/find-default-export.ts"
 import {
   formatSourceFile,
   formatSourceFileToString,
+
 } from "../utils/format-source-file.ts"
+import { getFunctionNameFromExpression } from "../utils/get-function-name-from-expression.ts"
 import { createTestSourceFile } from "../utils/test-utils.ts"
 import {
   addBaseProperty,
@@ -16,7 +18,7 @@ describe("vitest config test", () => {
         import { defineConfig } from 'vite';
         // https://vite.dev/config/
         export default defineConfig({
-        plugins:[foo()]
+        plugins:[foo()],
         base:"test"
         });
   ` as const
@@ -36,27 +38,27 @@ describe("vitest config test", () => {
     const sourceFile = await createTestSourceFile(code)
     const config = getDefaultViteConfig(sourceFile)
     expect(config).toBeDefined()
-    console.log(config)
   })
 
-  it("should ", async () => {
+  it("should test function name", async () => {
     const sourceFile = await createTestSourceFile(code)
 
     const exportedExpression = findDefaultExport(sourceFile)
-
-    const functionName = exportedExpression.getText()
-    const formatted = formatSourceFile(sourceFile).getFullText()
-    console.log(formatted)
-    expect(exportedExpression.getText()).toContain("defineConfig({")
-    console.log("Exported Expression:")
-    // console.log();
+    const functionName = getFunctionNameFromExpression(exportedExpression)
+    expect(functionName).toBe("defineConfig")
+  })
+  it("should test formatting logic to source file", async () => {
+    const sourceFile = await createTestSourceFile(code)
+    const formatted = formatSourceFile(sourceFile).getText()
+    expect(formatted).toMatchSnapshot()
   })
 
   it("should modify plugins without duplicates", async () => {
     const sf = await createTestSourceFile(code)
     const modified = addVitePlugins(sf, ["dff()", "dff", "dff"])
+    const formatted = formatSourceFileToString(modified.getSourceFile())
 
-    console.log(formatSourceFileToString(modified.getSourceFile()))
+    console.warn(formatted)
   })
   it("should modify addBaseProperty without duplicates", async () => {
     const sf = await createTestSourceFile(code)
