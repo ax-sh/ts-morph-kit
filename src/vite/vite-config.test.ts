@@ -1,12 +1,12 @@
 import { openAsSourceFile } from "../core/create-project.ts";
+import { findDefaultExport } from "../utils/find-default-export.ts";
 import {
   formatSourceFile,
   formatSourceFileToString,
 } from "../utils/format-source-file.ts";
+import { getFunctionNameFromExpression } from "../utils/get-function-name-from-expression.ts";
 import { createTestSourceFile } from "../utils/test-utils.ts";
 import { addBaseProperty, addVitePlugins } from "./vite.ts";
-import {findDefaultExport} from "../utils/find-default-export.ts";
-import {getFunctionNameFromExpression} from "../utils/get-function-name-from-expression.ts";
 
 const code = `
         import { defineConfig } from 'vite';
@@ -63,13 +63,13 @@ describe("vite.config.ts test", () => {
     const sf = openAsSourceFile("test.ts");
     const modified = addVitePlugins(sf, ["dff()", "dff", "dff"]);
     sf.formatText();
-    const before = sf.getText();
+    const before = sf.getFullText().trim();
     modified.formatText();
-    const formatted = formatSourceFileToString(modified.getSourceFile());
+    // const formatted = modified.getSourceFile().getFullText().trim();
 
-    // expect(before).toBe(formatted);
+    // expect(before).toContain(formatted);
     // no duplicates
-    expect(before).toContain('plugins: [foo(), dff(), dff],');
+    expect(before).toContain("plugins: [foo(), dff(), dff],");
   });
 
   it("should test function name", async () => {
@@ -86,7 +86,7 @@ describe("vite.config.ts test", () => {
     const sourceFile = await createTestSourceFile(code);
 
     expect(() => addBaseProperty(sourceFile, "/new-base")).toThrowError(
-        "The 'export default' does not call 'defineConfig'.",
+      "The 'export default' does not call 'defineConfig'.",
     );
   });
 });
