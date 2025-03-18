@@ -14,7 +14,6 @@ export default antfu(
     rules: {
       "no-template-curly-in-string": "off",
       "style/quotes": "off",
-
     },
   },
   {

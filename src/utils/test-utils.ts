@@ -1,6 +1,6 @@
 import path from "node:path"
 import { ScriptKind } from "ts-morph"
-import { createProject } from "./create-project.ts"
+import { createProject } from "../core/create-project.ts"
 
 export async function createMemorySourceFile(tempFile: string, input: string) {
   const project = createProject({ useInMemoryFileSystem: true })
