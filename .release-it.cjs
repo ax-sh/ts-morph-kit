@@ -55,6 +55,7 @@ module.exports = {
       "echo \uD83D\uDE4C Successfully released ${name} v${version} to ${repo.repository}.",
       'nr is-ci && echo "running in ci" || git push origin HEAD',
       "git push origin refs/heads/master:master",
+      "nr build",
       "nr gh:pub",
       // 'git push origin refs/heads/develop:develop',
     ],
