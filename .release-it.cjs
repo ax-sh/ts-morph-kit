@@ -40,8 +40,9 @@ module.exports = {
   hooks: {
     "before:init": [
       "nr format",
-      'git commit --allow-empty -am "ci: format files before release"',
       "nr lint",
+      "nr test",
+      'git commit --allow-empty -am "ci: format files before release"',
     ],
     "before:beforeBump": [
       "echo \uD83D\uDC4A ${name} before:bump latestVersion=v${version} previousVersion=v${latestVersion}",
@@ -60,4 +61,4 @@ module.exports = {
       // 'git push origin refs/heads/develop:develop',
     ],
   },
-};
+}
