@@ -4,9 +4,20 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🚀 Features
+
+- Add new exports to Vite configuration module
+
 ### ⚙️ Miscellaneous Tasks
 
 - Format files before release
+
+## [0.16.0] - 2025-04-15
+
+### ⚙️ Miscellaneous Tasks
+
+- Format files before release
+- Add CHANGELOG
 
 ## [0.15.0] - 2025-04-15
 
