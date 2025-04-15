@@ -96,7 +96,10 @@ export function addBasePropertyInDefaultViteConfig(
   return configObject
 }
 
-export function addPluginsInDefaultViteConfig(sourceFile: SourceFile, newPlugins: string[]) {
+export function addPluginsInDefaultViteConfig(
+  sourceFile: SourceFile,
+  newPlugins: string[],
+) {
   const configObject = getDefaultViteConfig(sourceFile)
   // Find the `plugins` property in the object literal
   const pluginsProperty = configObject.getProperty("plugins")

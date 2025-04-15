@@ -6,7 +6,10 @@ import {
 } from "../core/format-source-file.ts";
 import { getFunctionNameFromExpression } from "../core/get-function-name-from-expression.ts";
 import { createTestSourceFile } from "../utils/test-utils.ts";
-import { addBasePropertyInDefaultViteConfig, addPluginsInDefaultViteConfig } from "./vite.ts";
+import {
+  addBasePropertyInDefaultViteConfig,
+  addPluginsInDefaultViteConfig,
+} from "./vite.ts";
 
 const code = `
         import { defineConfig } from 'vite';
