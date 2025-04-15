@@ -1,7 +1,7 @@
 import type { ObjectLiteralExpression, SourceFile } from "ts-morph"
 import { CallExpression, SyntaxKind } from "ts-morph"
-import { findDefaultExport } from "../utils/find-default-export.ts"
-import { getFunctionNameFromExpression } from "../utils/get-function-name-from-expression.ts"
+import { findDefaultExport } from "../core/find-default-export.ts"
+import { getFunctionNameFromExpression } from "../core/get-function-name-from-expression.ts"
 
 export class NotAFunctionCallError extends Error {
   constructor() {
