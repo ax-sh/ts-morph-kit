@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🚀 Features
+
+- *(utils)* Add object literal to JSON conversion function
+
+### 💼 Other
+
+- Update devDependencies in package.json
+
+### ⚙️ Miscellaneous Tasks
+
+- Format files before release
+
+## [0.18.0] - 2025-04-15
+
 ### 🚜 Refactor
 
 - *(vite)* Specify generic type for default export function
@@ -19,6 +33,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format files before release
+- Add CHANGELOG
 
 ## [0.17.0] - 2025-04-15
 
