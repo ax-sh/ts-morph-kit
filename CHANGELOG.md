@@ -6,11 +6,22 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Add JSON conversion utilities to exports
+
+### ⚙️ Miscellaneous Tasks
+
+- Format files before release
+
+## [0.20.0] - 2025-04-15
+
+### 🚀 Features
+
 - Add JSON type exports from type-fest
 
 ### ⚙️ Miscellaneous Tasks
 
 - Format files before release
+- Add CHANGELOG
 
 ## [0.19.0] - 2025-04-15
 

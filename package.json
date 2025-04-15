@@ -1,7 +1,7 @@
 {
   "name": "@ax-sh/ts-morph-kit",
   "type": "module",
-  "version": "0.20.0",
+  "version": "0.21.0",
   "exports": {
     "import": {
       "types": "./dist/index.d.mts",
@@ -15,7 +15,9 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "lint": "eslint",
     "lint:fix": "eslint --fix",
