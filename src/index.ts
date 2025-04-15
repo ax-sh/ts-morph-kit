@@ -20,4 +20,9 @@ export type {
   ObjectLiteralExpression,
 } from "ts-morph"
 
-export type { JsonArray, JsonObject, JsonPrimitive, JsonValue } from "type-fest"
+export type {
+  JsonArray,
+  JsonObject,
+  JsonPrimitive,
+  JsonValue,
+} from "type-fest"
