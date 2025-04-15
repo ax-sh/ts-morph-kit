@@ -18,11 +18,13 @@ export {
   addPluginsInDefaultViteConfig,
   getDefaultViteConfig,
 } from "./vite/vite.ts"
+
 export type {
   ArrayLiteralExpression,
   CallExpression,
   Expression,
   ObjectLiteralExpression,
+  SourceFile,
 } from "ts-morph"
 
 export type {
