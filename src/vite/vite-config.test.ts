@@ -85,8 +85,8 @@ describe("vite.config.ts test", () => {
     `;
     const sourceFile = await createTestSourceFile(code);
 
-    expect(() => addBasePropertyInDefaultViteConfig(sourceFile, "/new-base")).toThrowError(
-      "The 'export default' does not call 'defineConfig'.",
-    );
+    expect(() =>
+      addBasePropertyInDefaultViteConfig(sourceFile, "/new-base"),
+    ).toThrowError("The 'export default' does not call 'defineConfig'.");
   });
 });

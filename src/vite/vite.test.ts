@@ -1,7 +1,10 @@
 // import { expect, describe, it } from "bun:test";
 import { formatSourceFileToString } from "../core/format-source-file.ts";
 import { createTestSourceFile } from "../utils/test-utils.ts";
-import { addBasePropertyInDefaultViteConfig, getDefaultViteConfig } from "./vite.ts";
+import {
+  addBasePropertyInDefaultViteConfig,
+  getDefaultViteConfig,
+} from "./vite.ts";
 
 describe("vitest config test", () => {
   const code = `
@@ -18,7 +21,10 @@ describe("vitest config test", () => {
       export default defineConfig({});
     `;
     const sourceFile = await createTestSourceFile(code);
-    const modifiedSourceFile = addBasePropertyInDefaultViteConfig(sourceFile, "/new-base");
+    const modifiedSourceFile = addBasePropertyInDefaultViteConfig(
+      sourceFile,
+      "/new-base",
+    );
 
     const result = formatSourceFileToString(modifiedSourceFile.getSourceFile());
     expect(result).toContain(`base: "/new-base"`);
