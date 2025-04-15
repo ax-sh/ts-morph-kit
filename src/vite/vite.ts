@@ -33,7 +33,7 @@ export class InvalidArgumentTypeError extends Error {
 }
 
 export function getDefaultViteConfig(sourceFile: SourceFile) {
-  const exportedExpression = findDefaultExport(sourceFile)
+  const exportedExpression = findDefaultExport<CallExpression>(sourceFile)
   // Ensure the exported expression is a CallExpression
   if (!CallExpression.isCallExpression(exportedExpression)) {
     throw new NotAFunctionCallError()
