@@ -41,7 +41,8 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "ts-morph": "^25.0.1"
+    "ts-morph": "^25.0.1",
+    "type-fest": "^4.40.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.10.1",

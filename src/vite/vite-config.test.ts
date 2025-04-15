@@ -1,15 +1,10 @@
 import { openAsSourceFile } from "../core/create-project.ts";
 import { findDefaultExport } from "../core/find-default-export.ts";
-import {
-  formatSourceFile,
-  formatSourceFileToString,
-} from "../core/format-source-file.ts";
+import { formatSourceFile, formatSourceFileToString } from "../core/format-source-file.ts";
 import { getFunctionNameFromExpression } from "../core/get-function-name-from-expression.ts";
+import { objectLiteralExpressionToJson } from "../utils/object-literal-expression-to-json.ts";
 import { createTestSourceFile } from "../utils/test-utils.ts";
-import {
-  addBasePropertyInDefaultViteConfig,
-  addPluginsInDefaultViteConfig,
-} from "./vite.ts";
+import { addBasePropertyInDefaultViteConfig, addPluginsInDefaultViteConfig } from "./vite.ts";
 
 const code = `
         import { defineConfig } from 'vite';
@@ -91,5 +86,14 @@ describe("vite.config.ts test", () => {
     expect(() =>
       addBasePropertyInDefaultViteConfig(sourceFile, "/new-base"),
     ).toThrowError("The 'export default' does not call 'defineConfig'.");
+  });
+
+  it("should parse config for defineConfig", async () => {
+    const sourceFile = await createTestSourceFile(code);
+    const config = addBasePropertyInDefaultViteConfig(sourceFile, "/new-base")
+    sourceFile.formatText()
+    const json = objectLiteralExpressionToJson(config)
+    expect(config).toBeDefined();
+    expect(json).toEqual({ plugins: [ 'foo()' ], base: '/new-base' })
   });
 });
