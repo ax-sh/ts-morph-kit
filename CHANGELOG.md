@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### ⚙️ Miscellaneous Tasks
+
+- Format files before release
+
+## [0.21.0] - 2025-04-15
+
 ### 🚀 Features
 
 - Add JSON conversion utilities to exports
@@ -11,6 +17,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format files before release
+- Add CHANGELOG
 
 ## [0.20.0] - 2025-04-15
 
