@@ -6,6 +6,16 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Add JSON type exports from type-fest
+
+### ⚙️ Miscellaneous Tasks
+
+- Format files before release
+
+## [0.19.0] - 2025-04-15
+
+### 🚀 Features
+
 - *(utils)* Add object literal to JSON conversion function
 
 ### 💼 Other
@@ -15,6 +25,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format files before release
+- Add CHANGELOG
 
 ## [0.18.0] - 2025-04-15
 
