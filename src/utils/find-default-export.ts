@@ -1,6 +1,6 @@
-import type { SourceFile } from "ts-morph"
+import type { Expression, SourceFile } from "ts-morph"
 
-export function findDefaultExport(sourceFile: SourceFile) {
+export function findDefaultExport<T = Expression>(sourceFile: SourceFile) {
   // Find the export default declaration
   const exportDefault = sourceFile
     .getExportAssignments()
@@ -10,5 +10,5 @@ export function findDefaultExport(sourceFile: SourceFile) {
   }
   // console.log("Found 'export default':");
   const exportedExpression = exportDefault.getExpression()
-  return exportedExpression
+  return exportedExpression as T
 }
