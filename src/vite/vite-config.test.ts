@@ -6,7 +6,7 @@ import {
 import { findDefaultExport } from "../utils/find-default-export.ts";
 import { getFunctionNameFromExpression } from "../utils/get-function-name-from-expression.ts";
 import { createTestSourceFile } from "../utils/test-utils.ts";
-import { addBasePropertyInDefaultViteConfig, addVitePlugins } from "./vite.ts";
+import { addBasePropertyInDefaultViteConfig, addPluginsInDefaultViteConfig } from "./vite.ts";
 
 const code = `
         import { defineConfig } from 'vite';
@@ -61,7 +61,7 @@ describe("vite.config.ts test", () => {
 
   it("[addVitePlugins] insert plugins without duplicates", async () => {
     const sf = openAsSourceFile("test.ts");
-    const modified = addVitePlugins(sf, ["dff()", "dff", "dff"]);
+    const modified = addPluginsInDefaultViteConfig(sf, ["dff()", "dff", "dff"]);
     sf.formatText();
     const before = sf.getFullText().trim();
     modified.formatText();

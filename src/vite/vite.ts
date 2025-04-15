@@ -53,7 +53,7 @@ export function getDefaultViteConfig(sourceFile: SourceFile) {
     throw new MissingArgumentsError(funcName)
   }
 
-  const [configObject] = args
+  const [configObject] = args // first argument for defineConfig({})
   if (
     !configObject
     || !configObject.isKind(SyntaxKind.ObjectLiteralExpression)
@@ -96,7 +96,7 @@ export function addBasePropertyInDefaultViteConfig(
   return configObject
 }
 
-export function addVitePlugins(sourceFile: SourceFile, newPlugins: string[]) {
+export function addPluginsInDefaultViteConfig(sourceFile: SourceFile, newPlugins: string[]) {
   const configObject = getDefaultViteConfig(sourceFile)
   // Find the `plugins` property in the object literal
   const pluginsProperty = configObject.getProperty("plugins")

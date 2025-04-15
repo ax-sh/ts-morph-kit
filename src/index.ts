@@ -13,7 +13,8 @@ export {
   getDefaultViteConfig,
 } from "./vite/vite.ts"
 export type {
+  ObjectLiteralExpression,
+  ArrayLiteralExpression,
   CallExpression,
   Expression,
-  ObjectLiteralExpression,
 } from "ts-morph"
