@@ -6,6 +6,8 @@ export { findDefaultExport } from "./core/find-default-export.ts"
 
 export { getFunctionNameFromExpression } from "./core/get-function-name-from-expression.ts"
 
+export { convertToJsonString, objectLiteralExpressionToJson } from "./utils/object-literal-expression-to-json.ts"
+
 export { createTestSourceFile } from "./utils/test-utils.ts"
 
 export {
