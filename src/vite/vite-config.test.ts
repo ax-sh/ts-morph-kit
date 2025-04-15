@@ -6,7 +6,7 @@ import {
 import { findDefaultExport } from "../utils/find-default-export.ts";
 import { getFunctionNameFromExpression } from "../utils/get-function-name-from-expression.ts";
 import { createTestSourceFile } from "../utils/test-utils.ts";
-import { addBaseProperty, addVitePlugins } from "./vite.ts";
+import { addBasePropertyInDefaultViteConfig, addVitePlugins } from "./vite.ts";
 
 const code = `
         import { defineConfig } from 'vite';
@@ -43,7 +43,7 @@ describe("vite.config.ts test", () => {
   });
   it("[addBaseProperty] modify base without duplicates", async () => {
     const sf = openAsSourceFile("test.ts");
-    const modified = addBaseProperty(sf, "voo");
+    const modified = addBasePropertyInDefaultViteConfig(sf, "voo");
     const formatted = formatSourceFileToString(modified.getSourceFile());
     // Assert that the base property is added correctly
     expect(formatted).toContain('base: "voo"');
@@ -85,7 +85,7 @@ describe("vite.config.ts test", () => {
     `;
     const sourceFile = await createTestSourceFile(code);
 
-    expect(() => addBaseProperty(sourceFile, "/new-base")).toThrowError(
+    expect(() => addBasePropertyInDefaultViteConfig(sourceFile, "/new-base")).toThrowError(
       "The 'export default' does not call 'defineConfig'.",
     );
   });

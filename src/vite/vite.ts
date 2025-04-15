@@ -86,7 +86,7 @@ export function upsertProperty(
   }
 }
 
-export function addBaseProperty(sourceFile: SourceFile, value: string) {
+export function addBasePropertyInDefaultViteConfig(sourceFile: SourceFile, value: string) {
   const configObject = getDefaultViteConfig(sourceFile)
   upsertProperty(configObject, "base", value)
 
