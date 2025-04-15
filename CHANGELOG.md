@@ -8,6 +8,13 @@ All notable changes to this project will be documented in this file.
 
 - Format files before release
 
+## [0.15.0] - 2025-04-15
+
+### ⚙️ Miscellaneous Tasks
+
+- Format files before release
+- Add CHANGELOG
+
 ## [0.14.0] - 2025-04-15
 
 ### 🎨 Styling
