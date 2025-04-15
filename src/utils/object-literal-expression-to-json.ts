@@ -2,7 +2,9 @@ import type { ObjectLiteralExpression } from "ts-morph"
 import type { JsonObject, JsonValue } from "type-fest"
 import { Node, SyntaxKind } from "ts-morph"
 
-export function objectLiteralExpressionToJson(objectLiteral: ObjectLiteralExpression): JsonObject {
+export function objectLiteralExpressionToJson(
+  objectLiteral: ObjectLiteralExpression,
+): JsonObject {
   const result: Record<string, JsonValue> = {}
 
   for (const property of objectLiteral.getProperties()) {
@@ -36,7 +38,9 @@ function getPropertyValue(initializer: Node): JsonValue {
   }
 
   if (Node.isArrayLiteralExpression(initializer)) {
-    return initializer.getElements().map(element => getPropertyValue(element))
+    return initializer
+      .getElements()
+      .map(element => getPropertyValue(element))
   }
 
   if (initializer.getKind() === SyntaxKind.TrueKeyword) {
@@ -60,7 +64,9 @@ function getPropertyValue(initializer: Node): JsonValue {
 }
 
 // Usage example
-export function convertToJsonString(objectLiteral: ObjectLiteralExpression): string {
+export function convertToJsonString(
+  objectLiteral: ObjectLiteralExpression,
+): string {
   const jsObject = objectLiteralExpressionToJson(objectLiteral)
   return JSON.stringify(jsObject, null, 2)
 }
