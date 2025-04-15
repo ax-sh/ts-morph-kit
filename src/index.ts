@@ -8,5 +8,12 @@ export { getFunctionNameFromExpression } from "./utils/get-function-name-from-ex
 
 export { createTestSourceFile } from "./utils/test-utils.ts"
 
-export { addBasePropertyInDefaultViteConfig, getDefaultViteConfig } from "./vite/vite.ts"
-export type { CallExpression, Expression, ObjectLiteralExpression } from "ts-morph"
+export {
+  addBasePropertyInDefaultViteConfig,
+  getDefaultViteConfig,
+} from "./vite/vite.ts"
+export type {
+  CallExpression,
+  Expression,
+  ObjectLiteralExpression,
+} from "ts-morph"
