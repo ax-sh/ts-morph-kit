@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🎨 Styling
+
+- Fix semicolons in code files
+
+### ⚙️ Miscellaneous Tasks
+
+- Format files before release
+
+## [0.13.0] - 2025-04-15
+
 ### 🚀 Features
 
 - Add getDefaultViteConfig and improve findDefaultExport
@@ -16,6 +26,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format files before release
+- Add CHANGELOG
 
 ## [0.12.0] - 2025-03-18
 
