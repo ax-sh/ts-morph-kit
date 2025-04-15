@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🚜 Refactor
+
+- *(vite)* Specify generic type for default export function
+- *(vite)* Simplify function name extraction logic
+- Rename addVitePlugins to addPluginsInDefaultViteConfig
+- Reorder imports in index.ts file
+- Move utility functions to core directory
+
+### 🧪 Testing
+
+- *(vite-config)* Add missing import for findDefaultExport
+
+### ⚙️ Miscellaneous Tasks
+
+- Format files before release
+
+## [0.17.0] - 2025-04-15
+
 ### 🚀 Features
 
 - Add new exports to Vite configuration module
@@ -11,6 +29,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format files before release
+- Add CHANGELOG
 
 ## [0.16.0] - 2025-04-15
 
