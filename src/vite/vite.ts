@@ -1,6 +1,7 @@
 import type { ObjectLiteralExpression, SourceFile } from "ts-morph"
 import { CallExpression, SyntaxKind } from "ts-morph"
 import { findDefaultExport } from "../utils/find-default-export.ts"
+import { getFunctionNameFromExpression } from "../utils/get-function-name-from-expression.ts"
 
 export class NotAFunctionCallError extends Error {
   constructor() {
@@ -38,13 +39,12 @@ export function getDefaultViteConfig(sourceFile: SourceFile) {
   if (!CallExpression.isCallExpression(exportedExpression)) {
     throw new NotAFunctionCallError()
   }
-  // Check if the callee is `defineConfig`
-  const callee = exportedExpression.getExpression()
+  const functionName = getFunctionNameFromExpression(exportedExpression)
   const funcName = "defineConfig"
-  if (
-    callee.getKind() !== SyntaxKind.Identifier
-    || callee.getText() !== funcName
-  ) {
+
+  // Check if the callee is `defineConfig`
+  // const callee = exportedExpression.getExpression()
+  if (functionName !== funcName) {
     throw new InvalidCalleeError(funcName)
   }
   // Get the arguments of the `defineConfig` call
