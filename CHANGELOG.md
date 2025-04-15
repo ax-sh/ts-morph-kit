@@ -6,11 +6,27 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Add getDefaultViteConfig and improve findDefaultExport
+
+### 🚜 Refactor
+
+- Rename format-source-file and update imports
+- Rename addBaseProperty to addBasePropertyInDefaultViteConfig
+
+### ⚙️ Miscellaneous Tasks
+
+- Format files before release
+
+## [0.12.0] - 2025-03-18
+
+### 🚀 Features
+
 - *(vite)* Update tests and improve import handling logic
 
 ### ⚙️ Miscellaneous Tasks
 
 - Format files before release
+- Add CHANGELOG
 
 ## [0.11.0] - 2025-03-18
 
