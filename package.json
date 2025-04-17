@@ -33,7 +33,8 @@
     "release": "dotenv -v DEBUG=1 release-it -- minor --no-git.push --no-git.requireUpstream --ci",
     "changelog:latest": "nr git-cliff -l",
     "upp": "bunx npm-check-updates -i",
-    "ox": "nr oxlint"
+    "ox": "nr oxlint",
+    "knip": "knip"
   },
   "peerDependencies": {
     "typescript": "^5.8.3"
