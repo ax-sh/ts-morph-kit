@@ -10,6 +10,14 @@ export interface TsFileImports {
   imports: string | string[]
   from: string
 }
+// TODO LATER this might be better but need to refactor the whole implementation
+// export type TsFileImports = {
+//   import: string
+//   from: string
+// } | {
+//   imports:string[]
+//   from: string
+// }
 
 /**
  * Adds import declarations to a TypeScript source file while avoiding duplicates
