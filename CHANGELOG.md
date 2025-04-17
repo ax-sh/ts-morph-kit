@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🚀 Features
+
+- Add function to manage TypeScript imports dynamically
+
+### ⚙️ Miscellaneous Tasks
+
+- Format files before release
+
+## [0.26.0] - 2025-04-15
+
 ### 🚜 Refactor
 
 - Add missing type export in index.ts
@@ -11,6 +21,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format files before release
+- Add CHANGELOG
 
 ## [0.25.0] - 2025-04-15
 
