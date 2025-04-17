@@ -6,11 +6,31 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Add knip configuration and refactor imports structure
+- *(errors)* Add custom error classes for validation
+
+### 💼 Other
+
+- Add knip command to package.json scripts
+
+### 🎨 Styling
+
+- Format code and update dependency version
+
+### ⚙️ Miscellaneous Tasks
+
+- Format files before release
+
+## [0.27.0] - 2025-04-17
+
+### 🚀 Features
+
 - Add function to manage TypeScript imports dynamically
 
 ### ⚙️ Miscellaneous Tasks
 
 - Format files before release
+- Add CHANGELOG
 
 ## [0.26.0] - 2025-04-15
 
