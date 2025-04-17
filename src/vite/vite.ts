@@ -2,37 +2,13 @@ import type { SourceFile } from "ts-morph"
 import { CallExpression, SyntaxKind } from "ts-morph"
 import { getFunctionNameFromExpression } from "../core/get-function-name-from-expression.ts"
 import { findDefaultExport } from "../core/source-file/find-default-export.ts"
+import {
+  InvalidArgumentTypeError,
+  InvalidCalleeError,
+  MissingArgumentsError,
+  NotAFunctionCallError,
+} from "../utils/errors.ts"
 import { upsertProperty } from "../utils/upsert-property-to-object-expression.ts"
-
-export class NotAFunctionCallError extends Error {
-  constructor() {
-    super("The 'export default' is not a function call.")
-    this.name = "NotAFunctionCallError"
-  }
-}
-
-export class InvalidCalleeError extends Error {
-  constructor(expectedFuncName: string) {
-    super(`The 'export default' does not call '${expectedFuncName}'.`)
-    this.name = "InvalidCalleeError"
-  }
-}
-
-export class MissingArgumentsError extends Error {
-  constructor(funcName: string) {
-    super(`The '${funcName}' call has no arguments.`)
-    this.name = "MissingArgumentsError"
-  }
-}
-
-export class InvalidArgumentTypeError extends Error {
-  constructor(funcName: string) {
-    super(
-      `The '${funcName}' call does not contain an object literal as its argument.`,
-    )
-    this.name = "InvalidArgumentTypeError"
-  }
-}
 
 export function getDefaultViteConfig(sourceFile: SourceFile) {
   const exportedExpression = findDefaultExport<CallExpression>(sourceFile)
