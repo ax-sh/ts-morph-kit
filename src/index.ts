@@ -2,9 +2,11 @@ export { addImportsToTsFile } from "./core/add-imports-to-ts-file.ts"
 
 export { createProject, openAsSourceFile } from "./core/create-project.ts"
 
-export { findDefaultExport } from "./core/find-default-export.ts"
-
 export { getFunctionNameFromExpression } from "./core/get-function-name-from-expression.ts"
+
+export { addImportsToSourceFile } from "./core/source-file/add-imports-to-source-file.ts"
+
+export { findDefaultExport } from "./core/source-file/find-default-export.ts"
 
 export {
   convertToJsonString,

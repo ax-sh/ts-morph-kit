@@ -1,6 +1,6 @@
 import type { SourceFile } from "ts-morph"
-import type { TsFileImports, TsImports } from "../utils/add-imports.ts"
-import { addImports } from "../utils/add-imports.ts"
+import type { TsFileImports, TsImports } from "../../utils/add-imports.ts"
+import { addImports } from "../../utils/add-imports.ts"
 
 /**
  * Adds import statements to a TypeScript source file while preventing duplicates

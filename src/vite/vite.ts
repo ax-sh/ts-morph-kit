@@ -1,7 +1,8 @@
-import type { ObjectLiteralExpression, SourceFile } from "ts-morph"
+import type { SourceFile } from "ts-morph"
 import { CallExpression, SyntaxKind } from "ts-morph"
-import { findDefaultExport } from "../core/find-default-export.ts"
 import { getFunctionNameFromExpression } from "../core/get-function-name-from-expression.ts"
+import { findDefaultExport } from "../core/source-file/find-default-export.ts"
+import { upsertProperty } from "../utils/upsert-property-to-object-expression.ts"
 
 export class NotAFunctionCallError extends Error {
   constructor() {
@@ -61,29 +62,6 @@ export function getDefaultViteConfig(sourceFile: SourceFile) {
     throw new InvalidArgumentTypeError(funcName)
   }
   return configObject
-}
-
-export function upsertProperty(
-  configObject: ObjectLiteralExpression,
-  property: string,
-  value: string,
-) {
-  // Check if the `base` property exists
-  const baseProperty = configObject.getProperty(property)
-  if (baseProperty?.isKind(SyntaxKind.PropertyAssignment)) {
-    // Update the existing `base` property
-    baseProperty.setInitializer(`"${value}"`)
-  }
-  else {
-    // Add the `base` property if it doesn't exist
-    // console.log(
-    //   `${property} property not found. Adding it with the specified value.`,
-    // );
-    configObject.addPropertyAssignment({
-      name: property,
-      initializer: `"${value}"`, // Set the specified value for `base`
-    })
-  }
 }
 
 export function addBasePropertyInDefaultViteConfig(

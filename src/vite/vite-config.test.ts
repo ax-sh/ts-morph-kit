@@ -1,10 +1,10 @@
 import { openAsSourceFile } from "../core/create-project.ts";
-import { findDefaultExport } from "../core/find-default-export.ts";
+import { getFunctionNameFromExpression } from "../core/get-function-name-from-expression.ts";
+import { findDefaultExport } from "../core/source-file/find-default-export.ts";
 import {
   formatSourceFile,
   formatSourceFileToString,
-} from "../core/format-source-file.ts";
-import { getFunctionNameFromExpression } from "../core/get-function-name-from-expression.ts";
+} from "../core/source-file/format-source-file.ts";
 import { objectLiteralExpressionToJson } from "../utils/object-literal-expression-to-json.ts";
 import { createTestSourceFile } from "../utils/test-utils.ts";
 import {

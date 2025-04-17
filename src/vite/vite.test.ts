@@ -1,5 +1,5 @@
 // import { expect, describe, it } from "bun:test";
-import { formatSourceFileToString } from "../core/format-source-file.ts";
+import { formatSourceFileToString } from "../core/source-file/format-source-file.ts";
 import { createTestSourceFile } from "../utils/test-utils.ts";
 import {
   addBasePropertyInDefaultViteConfig,
