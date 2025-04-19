@@ -7,7 +7,7 @@ import {
   InvalidCalleeError,
   MissingArgumentsError,
   NotAFunctionCallError,
-} from "../utils/errors.ts"
+} from "../errors.ts"
 import { upsertProperty } from "../utils/upsert-property-to-object-expression.ts"
 
 export function getDefaultViteConfig(sourceFile: SourceFile) {
