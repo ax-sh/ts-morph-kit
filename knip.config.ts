@@ -2,8 +2,6 @@ import type { KnipConfig } from "knip"
 
 const config: KnipConfig = {
   ignore: [
-    "src/components/ui/**",
-    "src/routeTree.gen.ts",
     "src/utils/test-utils.ts",
   ], // : ['createMemorySourceFile'],
   ignoreDependencies: [
@@ -13,8 +11,9 @@ const config: KnipConfig = {
     "is-ci",
     "git-cliff",
     "oxlint",
+    "renovate",
   ],
-  ignoreBinaries: ["nr", "repo"],
+  ignoreBinaries: ["nr", "repo", "act"],
   ignoreExportsUsedInFile: {
     interface: true,
     type: true,

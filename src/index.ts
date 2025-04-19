@@ -15,6 +15,8 @@ export {
 
 export { createTestSourceFile } from "./utils/test-utils.ts"
 
+export { parseCompilerOptionsTypes } from "./utils/tsconfig/tsconfig-jsonc.ts"
+
 export {
   addBasePropertyInDefaultViteConfig,
   addPluginsInDefaultViteConfig,
