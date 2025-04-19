@@ -1,5 +1,5 @@
 import type { EditResult, JSONPath, ModificationOptions, ParseError } from "jsonc-parser"
-import { modify, parse } from "jsonc-parser"
+import { applyEdits, modify, parse } from "jsonc-parser"
 
 // More complete type definition with optional fields
 export interface TsconfigContent {
@@ -55,4 +55,17 @@ export function modifyCompilerOptionsTypes(
   }
 
   return modify(rawJsonString, jsonPath, [...types], options)
+}
+
+export function updateCompilerOptionsTypes(rawJsonString: string, newTypesToAdd: string[]) {
+  const existingTypes = parseCompilerOptionsTypes(rawJsonString)
+
+  // Filter out duplicates by creating a Set
+  const uniqueTypes = [...new Set([...existingTypes, ...newTypesToAdd])]
+
+  // Prepare the edits
+  const edits = modifyCompilerOptionsTypes(rawJsonString, uniqueTypes)
+
+  // Apply the edits to the original JSONC data
+  return applyEdits(rawJsonString, edits)
 }
