@@ -4,6 +4,7 @@
     "": {
       "name": "ts-morph-kit",
       "dependencies": {
+        "jsonc-parser": "^3.3.1",
         "ts-morph": "^25.0.1",
         "type-fest": "^4.40.0",
       },
