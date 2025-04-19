@@ -8,14 +8,14 @@ export { addImportsToSourceFile } from "./core/source-file/add-imports-to-source
 
 export { findDefaultExport } from "./core/source-file/find-default-export.ts"
 
+export { parseCompilerOptionsTypes } from "./core/tsconfig/tsconfig-jsonc.ts"
+
 export {
   convertToJsonString,
   objectLiteralExpressionToJson,
 } from "./utils/object-literal-expression-to-json.ts"
 
 export { createTestSourceFile } from "./utils/test-utils.ts"
-
-export { parseCompilerOptionsTypes } from "./utils/tsconfig/tsconfig-jsonc.ts"
 
 export {
   addBasePropertyInDefaultViteConfig,

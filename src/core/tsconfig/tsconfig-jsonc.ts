@@ -1,6 +1,5 @@
-import type { ParseError } from "jsonc-parser"
-
-import { parse } from "jsonc-parser"
+import type { EditResult, JSONPath, ModificationOptions, ParseError } from "jsonc-parser"
+import { modify, parse } from "jsonc-parser"
 
 // More complete type definition with optional fields
 export interface TsconfigContent {
@@ -38,4 +37,22 @@ export function parseCompilerOptionsTypes(
 
   // Safely access possibly undefined properties
   return tsconfig.compilerOptions?.types || []
+}
+
+/**
+ * Creates edits to modify compiler options types
+ * @param rawJsonString The raw tsconfig JSON string
+ * @param types The new types array to set
+ * @returns The edit operations to apply
+ */
+export function modifyCompilerOptionsTypes(
+  rawJsonString: string,
+  types: readonly string[],
+): EditResult {
+  const jsonPath: JSONPath = ["compilerOptions", "types"]
+  const options: ModificationOptions = {
+    formattingOptions: { insertSpaces: true, tabSize: 2 },
+  }
+
+  return modify(rawJsonString, jsonPath, [...types], options)
 }
