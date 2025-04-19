@@ -8,12 +8,3 @@ export default defineConfig({
 });
 "
 `;
-
-exports[`vitest config test should handle empty configuration objects 1`] = `
-"
-import { defineConfig } from 'vite';
-export default defineConfig({
-  base: "/new-base"
-});
-"
-`;
