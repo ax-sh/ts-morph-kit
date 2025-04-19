@@ -36,7 +36,10 @@
     "changelog:latest": "nr git-cliff -l",
     "upp": "bunx npm-check-updates -i",
     "ox": "nr oxlint",
-    "knip": "knip"
+    "knip": "knip",
+    "act": "act --container-architecture linux/amd64",
+    "act:debug": "nr act --env NODE_ENV=development --env DEBUG=true",
+    "renovate": "nr act --env RENOVATE_TOKEN=$(gh auth token) -j renovate"
   },
   "peerDependencies": {
     "typescript": "^5.8.3"
