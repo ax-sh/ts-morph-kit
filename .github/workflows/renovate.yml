@@ -18,8 +18,8 @@ jobs:
           token: ${{ secrets.RENOVATE_TOKEN }}
           configurationFile: renovate.json
         env:
-          LOG_LEVEL: debug
-          RENOVATE_BASE_BRANCHES: "main,develop"
+#          LOG_LEVEL: debug
+          RENOVATE_BASE_BRANCHES: "master,develop"
           RENOVATE_REPOSITORY_CACHE: enabled
           RENOVATE_ONBOARDING: "false"
           RENOVATE_PLATFORM: github
