@@ -23,4 +23,7 @@ jobs:
           RENOVATE_REPOSITORY_CACHE: enabled
           RENOVATE_ONBOARDING: "false"
           RENOVATE_PLATFORM: github
+          RENOVATE_AUTOMERGE: true
+          RENOVATE_AUTODISCOVER: true
+          RENOVATE_AUTODISCOVER_FILTER: ${{ github.event.repository.full_name }}
           RENOVATE_ENDPOINT: ${{ secrets.GITHUB_API_URL }}
