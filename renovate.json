@@ -1,6 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base"],
+  "extends": ["config:recommended"],
   "timezone": "America/Los_Angeles",
-  "schedule": "12th of every month"
+  "schedule": "every weekend",
+  "commitMessagePrefix": "chore(deps): ",
+  "reviewers": ["team:ax-sh"]
 }
