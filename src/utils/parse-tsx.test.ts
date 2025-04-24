@@ -1,6 +1,6 @@
 import type { JsxElement } from "ts-morph";
 import { SyntaxKind } from "ts-morph";
-import { createTestSourceFile, createTestTsxSourceFile } from "./test-utils.ts";
+import { createTestTsxSourceFile } from "./test-utils.ts";
 
 const code = `
 import "./styles.css";
@@ -21,8 +21,9 @@ function wrapWithTag(jsxElement: JsxElement, tag: string) {
       ${jsxElement.getText()}
     </${tag}>
   `;
+  jsxElement.getSourceFile().formatText();
   // Replace the original JSX element with the new wrapped version
-  jsxElement.replaceWithText(newJsxText);
+  return jsxElement.replaceWithText(newJsxText);
 }
 
 describe('tsx mutate test', () => {
@@ -42,15 +43,16 @@ describe('tsx mutate test', () => {
     const sourceFile = await createTestTsxSourceFile(code)
     // Find the return statement containing the JSX
     const returnStatement = sourceFile.getFirstDescendantByKind(SyntaxKind.ReturnStatement);
-    const jsxElement = returnStatement.getFirstDescendantByKind(SyntaxKind.JsxElement);
+    const jsxElement = returnStatement?.getFirstDescendantByKind(SyntaxKind.JsxElement);
 
     if (jsxElement) {
       const tag = 'Provvv'
-      wrapWithTag(jsxElement, tag);
+      const r = wrapWithTag(jsxElement, tag);
+      console.log(r.getText())
     }// Format the document to ensure proper indentation
-    sourceFile.formatText();
 
-    console.log(sourceFile.getText());
-    sourceFile.saveSync();
+    const xml = sourceFile.getFirstDescendantByKind(SyntaxKind.ReturnStatement)?.getText()
+
+    console.log(xml);
   });
 });
