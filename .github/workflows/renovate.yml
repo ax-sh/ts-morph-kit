@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Self-hosted Renovate
-        uses: renovatebot/github-action@v39.2.0
+        uses: renovatebot/github-action@v39.2.4
         with:
           token: ${{ secrets.RENOVATE_TOKEN }}
           configurationFile: renovate.json
@@ -24,6 +24,5 @@ jobs:
           RENOVATE_ONBOARDING: "false"
           RENOVATE_PLATFORM: github
           RENOVATE_AUTOMERGE: true
-          RENOVATE_AUTODISCOVER: true
           RENOVATE_AUTODISCOVER_FILTER: ${{ github.event.repository.full_name }}
           RENOVATE_ENDPOINT: ${{ secrets.GITHUB_API_URL }}
