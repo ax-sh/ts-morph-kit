@@ -4,31 +4,31 @@
     "": {
       "name": "ts-morph-kit",
       "dependencies": {
-        "jsonc-parser": "latest",
-        "ts-morph": "latest",
-        "type-fest": "latest",
+        "jsonc-parser": "^3.3.1",
+        "ts-morph": "^26.0.0",
+        "type-fest": "^4.40.0",
       },
       "devDependencies": {
-        "@antfu/eslint-config": "latest",
-        "@biomejs/biome": "latest",
-        "@release-it/conventional-changelog": "latest",
-        "@types/bun": "latest",
-        "@types/node": "latest",
-        "dotenv-cli": "latest",
-        "eslint": "latest",
-        "eslint-plugin-format": "latest",
-        "git-cliff": "latest",
-        "is-ci": "latest",
-        "knip": "latest",
-        "oxlint": "latest",
-        "pkgroll": "latest",
-        "release-it": "latest",
-        "renovate": "latest",
-        "rimraf": "latest",
-        "vitest": "latest",
+        "@antfu/eslint-config": "^4.12.0",
+        "@biomejs/biome": "1.9.4",
+        "@release-it/conventional-changelog": "^10.0.1",
+        "@types/bun": "^1.2.10",
+        "@types/node": "^22.14.1",
+        "dotenv-cli": "^8.0.0",
+        "eslint": "^9.25.1",
+        "eslint-plugin-format": "^1.0.1",
+        "git-cliff": "^2.8.0",
+        "is-ci": "^4.1.0",
+        "knip": "^5.50.5",
+        "oxlint": "^0.16.7",
+        "pkgroll": "^2.12.1",
+        "release-it": "^19.0.1",
+        "renovate": "^39.253.4",
+        "rimraf": "^6.0.1",
+        "vitest": "^3.1.2",
       },
       "peerDependencies": {
-        "typescript": "latest",
+        "typescript": "^5.8.3",
       },
     },
   },
@@ -675,7 +675,7 @@
 
     "@tootallnate/quickjs-emscripten": ["@tootallnate/quickjs-emscripten@0.23.0", "", {}, "sha512-C5Mc6rdnsaJDjO3UpGW/CQTHtCKaYlScZTly4JIu97Jxo/odCiH0ITnDXSJPTOrEKk/ycSZ0AOgTmkDtkOsvIA=="],
 
-    "@ts-morph/common": ["@ts-morph/common@0.26.1", "", { "dependencies": { "fast-glob": "^3.3.2", "minimatch": "^9.0.4", "path-browserify": "^1.0.1" } }, "sha512-Sn28TGl/4cFpcM+jwsH1wLncYq3FtN/BIpem+HOygfBWPT5pAeS5dB4VFVzV8FbnOKHpDLZmvAl4AjPEev5idA=="],
+    "@ts-morph/common": ["@ts-morph/common@0.27.0", "", { "dependencies": { "fast-glob": "^3.3.3", "minimatch": "^10.0.1", "path-browserify": "^1.0.1" } }, "sha512-Wf29UqxWDpc+i61k3oIOzcUfQt79PIT9y/MWfAGlrkjg6lBC1hwDECLXPVJAhWjiGbfBCxZd65F/LIZF3+jeJQ=="],
 
     "@tybys/wasm-util": ["@tybys/wasm-util@0.9.0", "", { "dependencies": { "tslib": "^2.4.0" } }, "sha512-6+7nlbMVX/PVDCwaIQ8nTOPveOcFLSt8GcXdx8hD0bt39uWxYT88uXzqTd4fTvqta7oeUJqudepapKNt2DYJFw=="],
 
@@ -2263,7 +2263,7 @@
 
     "ts-api-utils": ["ts-api-utils@2.0.1", "", { "peerDependencies": { "typescript": ">=4.8.4" } }, "sha512-dnlgjFSVetynI8nzgJ+qF62efpglpWRk8isUEWZGWlJYySCTD6aKvbUDu+zbPeDakk3bg5H4XpitHukgfL1m9w=="],
 
-    "ts-morph": ["ts-morph@25.0.1", "", { "dependencies": { "@ts-morph/common": "~0.26.0", "code-block-writer": "^13.0.3" } }, "sha512-QJEiTdnz1YjrB3JFhd626gX4rKHDLSjSVMvGGG4v7ONc3RBwa0Eei98G9AT9uNFDMtV54JyuXsFeC+OH0n6bXQ=="],
+    "ts-morph": ["ts-morph@26.0.0", "", { "dependencies": { "@ts-morph/common": "~0.27.0", "code-block-writer": "^13.0.3" } }, "sha512-ztMO++owQnz8c/gIENcM9XfCEzgoGphTv+nKpYNM1bgsdOVC/jRZuEBf6N+mLLDNg68Kl+GgUZfOySaRiG1/Ug=="],
 
     "tslib": ["tslib@2.8.1", "", {}, "sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w=="],
 
@@ -2451,7 +2451,7 @@
 
     "@pnpm/read-project-manifest/@pnpm/error": ["@pnpm/error@4.0.0", "", { "dependencies": { "@pnpm/constants": "6.1.0" } }, "sha512-NI4DFCMF6xb1SA0bZiiV5KrMCaJM2QmPJFC6p78FXujn7FpiRSWhT9r032wpuQumsl7DEmN4s3wl/P8TA+bL8w=="],
 
-    "@ts-morph/common/minimatch": ["minimatch@9.0.5", "", { "dependencies": { "brace-expansion": "^2.0.1" } }, "sha512-G6T0ZX48xgozx7587koeX9Ys2NYy6Gmv//P89sEte9V9whIapMNF4idKxnW2QtCcLiTWlb/wfCabAtAFWhhBow=="],
+    "@ts-morph/common/minimatch": ["minimatch@10.0.1", "", { "dependencies": { "brace-expansion": "^2.0.1" } }, "sha512-ethXTt3SGGR+95gudmqJ1eNhRO7eGEGIgYA9vnPatK4/etz2MEVDno5GMCibdMTuBMyElzIlgxMna3K94XDIDQ=="],
 
     "@typescript-eslint/eslint-plugin/@typescript-eslint/utils": ["@typescript-eslint/utils@8.30.1", "", { "dependencies": { "@eslint-community/eslint-utils": "^4.4.0", "@typescript-eslint/scope-manager": "8.30.1", "@typescript-eslint/types": "8.30.1", "@typescript-eslint/typescript-estree": "8.30.1" }, "peerDependencies": { "eslint": "^8.57.0 || ^9.0.0", "typescript": ">=4.8.4 <5.9.0" } }, "sha512-T/8q4R9En2tcEsWPQgB5BQ0XJVOtfARcUvOa8yJP3fh9M/mXraLxZrkCfGb6ChrO/V3W+Xbd04RacUEqk1CFEQ=="],
 
