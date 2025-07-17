@@ -64,7 +64,7 @@
     "oxlint": "^0.18.0",
     "pkgroll": "^2.12.1",
     "release-it": "^19.0.1",
-    "renovate": "^40.0.0",
+    "renovate": "^41.0.0",
     "rimraf": "^6.0.1",
     "vitest": "^3.1.2"
   }
