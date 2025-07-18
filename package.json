@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "jsonc-parser": "^3.3.1",
-    "ts-morph": "^25.0.1",
+    "ts-morph": "^26.0.0",
     "type-fest": "^4.40.0"
   },
   "devDependencies": {
@@ -64,7 +64,6 @@
     "oxlint": "^0.18.0",
     "pkgroll": "^2.12.1",
     "release-it": "^19.0.1",
-    "renovate": "^41.0.0",
     "rimraf": "^6.0.1",
     "vitest": "^3.1.2"
   }
