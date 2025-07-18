@@ -61,7 +61,7 @@
     "git-cliff": "^2.8.0",
     "is-ci": "^4.1.0",
     "knip": "^5.50.5",
-    "oxlint": "^0.18.0",
+    "oxlint": "^1.0.0",
     "pkgroll": "^2.12.1",
     "release-it": "^19.0.1",
     "renovate": "^41.0.0",
