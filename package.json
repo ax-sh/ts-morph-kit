@@ -39,7 +39,8 @@
     "knip": "knip",
     "act": "act --container-architecture linux/amd64",
     "act:debug": "nr act --env NODE_ENV=development --env DEBUG=true",
-    "renovate": "nr act --env RENOVATE_TOKEN=$(gh auth token) -j renovate"
+    "renovate": "nr act --env RENOVATE_TOKEN=$(gh auth token) -j renovate",
+    "renovate:validate": "bunx --yes --package renovate -- renovate-config-validator   "
   },
   "peerDependencies": {
     "typescript": "^5.8.3"
