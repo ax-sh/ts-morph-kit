@@ -1,7 +1,7 @@
 {
   "name": "@ax-sh/ts-morph-kit",
   "type": "module",
-  "version": "0.30.0",
+  "version": "0.31.0",
   "exports": {
     "import": {
       "types": "./dist/index.d.mts",

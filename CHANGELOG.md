@@ -2,11 +2,18 @@
 
 ### ⚙️ Miscellaneous Tasks
 
+- Add more helper scripts
+- Format files before release
+## [0.30.0] - 2025-11-12
+
+### ⚙️ Miscellaneous Tasks
+
 - Add CHANGELOG
 - Fix
 - Fix
 - Fix renovate not working
 - Format files before release
+- Add CHANGELOG
 ## [0.29.0] - 2025-11-12
 
 ### 🚀 Features
