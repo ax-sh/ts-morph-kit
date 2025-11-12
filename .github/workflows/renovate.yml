@@ -5,8 +5,8 @@ on:
     - cron: "0 1 * * *"
   workflow_dispatch:
 
-#need these permissions
-#Active account: true
+# need these permissions
+# Active account: true
 #                  - Git operations protocol: https
 #                  - Token: ghp_************************************
 #                  - Token scopes: 'admin:public_key', 'copilot', 'delete:packages', 'read:org', 'repo', 'write:packages'
@@ -21,7 +21,7 @@ jobs:
         uses: renovatebot/github-action@v44.0.2
         with:
           token: ${{ secrets.RENOVATE_TOKEN }}
-#          configurationFile: renovate.json5 // not needed automatically finds but good to know
+        #          configurationFile: renovate.json5 // not needed automatically finds but good to know
         env:
           #          LOG_LEVEL: debug
           RENOVATE_BASE_BRANCHES: "master,develop"
