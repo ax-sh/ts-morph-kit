@@ -1,7 +1,7 @@
 {
   "name": "@ax-sh/ts-morph-kit",
   "type": "module",
-  "version": "0.30.0",
+  "version": "0.31.0",
   "exports": {
     "import": {
       "types": "./dist/index.d.mts",
@@ -40,7 +40,11 @@
     "act": "act --container-architecture linux/amd64",
     "act:debug": "nr act --env NODE_ENV=development --env DEBUG=true",
     "renovate": "nr act --env RENOVATE_TOKEN=$(gh auth token) -j renovate",
-    "renovate:validate": "bunx --yes --package renovate -- renovate-config-validator   "
+    "renovate:validate": "bunx --yes --package renovate -- renovate-config-validator",
+    "renovate:gh-status": "gh run list --workflow=renovate.yml",
+    "renovate:gh-log": "gh run view --log",
+    "renovate:run": "gh workflow run renovate.yml --ref develop",
+    "pr:dev-to-master": "gh pr create --base master --head develop --fill"
   },
   "peerDependencies": {
     "typescript": "^5.8.3"
