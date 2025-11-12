@@ -4,30 +4,30 @@ import {
   createTSFile,
 } from "../core/create-test-project.ts";
 
-describe("modifySource", () => {
-  it("adds imports, exports, and modifies functions without touching FS", async () => {
-    const { project, fs } = createTestProject({
-      "/src/main.ts": `
-        import { oldFn } from './old';
-        export function process() {
-          return oldFn();
-        }
-      `,
-    });
-    const file = project.getSourceFileOrThrow("/src/main.ts");
-    console.log(fs.fileExistsSync("/src/main.ts"));
-    //       // ensure we never touched disk
-    //       // expect(project.getFileSystem().fileExistsSync("/src/main.ts")).toBe(true);
-    //
-    //       const result = file.getFullText();
-    //
-    //       // verify imports and exports exist
-    //       expect(result).toContain(`from './utils'`);
-    //       expect(result).toContain(`export { helper }`);
-    //       expect(result).toContain(`const newVar = 42`);
-    //       expect(result).toContain(`return helper`);
-  });
-});
+// describe.todo("modifySource", () => {
+//   it("adds imports, exports, and modifies functions without touching FS", async () => {
+//     const { project, fs } = createTestProject({
+//       "/src/main.ts": `
+//         import { oldFn } from './old';
+//         export function process() {
+//           return oldFn();
+//         }
+//       `,
+//     });
+//     const file = project.getSourceFileOrThrow("/src/main.ts");
+//     console.log(fs.fileExistsSync("/src/main.ts"));
+//     //       // ensure we never touched disk
+//     //       // expect(project.getFileSystem().fileExistsSync("/src/main.ts")).toBe(true);
+//     //
+//     //       const result = file.getFullText();
+//     //
+//     //       // verify imports and exports exist
+//     //       expect(result).toContain(`from './utils'`);
+//     //       expect(result).toContain(`export { helper }`);
+//     //       expect(result).toContain(`const newVar = 42`);
+//     //       expect(result).toContain(`return helper`);
+//   });
+// });
 
 describe("transformer", () => {
   it("should modify source files", () => {

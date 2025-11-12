@@ -53,7 +53,7 @@ describe("tsx mutate test", () => {
       const tag = "__Test";
       const r = wrapWithTag(jsxElement, tag);
       const xmlSourceCode = r.getText();
-      console.debug(xmlSourceCode);
+      console.warn(xmlSourceCode);
     } // Format the document to ensure proper indentation
 
     const returnedFormatted = sourceFile
