@@ -1,5 +1,14 @@
 ## [unreleased]
 
+### ⚙️ Miscellaneous Tasks
+
+- Add CHANGELOG
+- Fix
+- Fix
+- Fix renovate not working
+- Format files before release
+## [0.29.0] - 2025-11-12
+
 ### 🚀 Features
 
 - Add renovate.json
@@ -54,6 +63,7 @@
 - Add test utils
 - Update packages
 - Format files before release
+- Add CHANGELOG
 ## [0.28.0] - 2025-04-17
 
 ### 🚀 Features
