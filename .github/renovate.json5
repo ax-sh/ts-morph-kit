@@ -40,6 +40,26 @@
   "commitMessageExtra": "to {{#if isMajor}}v{{newMajor}}{{else}}{{#if isSingleVersion}}v{{newVersion}}{{else}}{{newValue}}{{/if}}{{/if}}",
   "packageRules": [
     {
+      "groupName": "type definitions",
+      "automerge": true,
+      "matchPackageNames": ["/^@types//"]
+    },
+    {
+      "groupName": "prettier ecosystem",
+      "automerge": true,
+      "matchPackageNames": ["/^prettier/", "/^@prettier/"]
+    },
+    {
+      "groupName": "eslint ecosystem",
+      "automerge": true,
+      "matchPackageNames": ["/^eslint/", "/^@eslint/"]
+    },
+    {
+      "groupName": "typescript-eslint",
+      "automerge": true,
+      "matchPackageNames": ["/^@typescript-eslint//"]
+    },
+    {
       "groupName": "vitest",
       "automerge": true,
       "matchPackageNames": [
@@ -62,9 +82,10 @@
       "automerge": true,
       "automergeType": "pr",
       "platformAutomerge": false
-    },
+    }
   ],
   "npm": {
     "minimumReleaseAge": "3 days"
-  }
+  },
+  "rebaseWhen": "conflicted"
 }
