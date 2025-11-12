@@ -1,39 +1,24 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended"
-  ],
-  "baseBranches": [
-    "develop"
-  ],
+  "extends": ["config:recommended"],
+  "baseBranchPatterns": ["develop"],
   "timezone": "UTC",
-  "addLabels": [
-    "{{depName}}"
-  ],
-  "labels": [
-    "dependencies"
-  ],
+  "addLabels": ["{{depName}}"],
+  "labels": ["dependencies"],
   "vulnerabilityAlerts": {
     "enabled": true,
-    "labels": [
-      "security"
-    ],
+    "labels": ["security"],
     "assigneesFromCodeOwners": true
   },
   "lockFileMaintenance": {
     "enabled": false,
-    // not applicable for bun yet
-    "schedule": [
-      "before 4am on monday"
-    ]
+    "schedule": ["before 4am on monday"]
   },
-  //  dashboard
   "dependencyDashboard": true,
   "dependencyDashboardAutoclose": true,
   "dependencyDashboardTitle": "📊 Dependency Dashboard",
   "dependencyDashboardHeader": "This issue lists Renovate updates and detected dependencies. Read the [Dependency Dashboard](https://docs.renovatebot.com/key-concepts/dashboard/) docs to learn more.",
   "dependencyDashboardFooter": "- [ ] Check this box to trigger a request for Renovate to run again on this repository",
-  //  dashboard
   "commitMessagePrefix": "chore(deps): ",
   "commitMessageAction": "update",
   "commitMessageTopic": "{{depName}}",
@@ -62,30 +47,21 @@
     {
       "groupName": "vitest",
       "automerge": true,
-      "matchPackageNames": [
-        "/^@vitest//",
-        "/^vitest/"
-      ]
+      "matchPackageNames": ["/^@vitest//", "/^vitest/"]
     },
     {
       "automerge": true,
       "automergeType": "pr",
       "platformAutomerge": false,
-      "matchPackageNames": [
-        "/^@types//"
-      ]
+      "matchPackageNames": ["/^@types//"]
     },
     {
-      "matchDepTypes": [
-        "devDependencies"
-      ],
+      "matchDepTypes": ["devDependencies"],
       "automerge": true,
       "automergeType": "pr",
       "platformAutomerge": false
     }
   ],
-  "npm": {
-    "minimumReleaseAge": "3 days"
-  },
+  "npm": { "minimumReleaseAge": "3 days" },
   "rebaseWhen": "conflicted"
 }

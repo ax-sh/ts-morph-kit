@@ -13,7 +13,7 @@ export default function App() {
     </div>
   );
 }
-`
+`;
 
 function wrapWithTag(jsxElement: JsxElement, tag: string) {
   const newJsxText = `
@@ -26,7 +26,7 @@ function wrapWithTag(jsxElement: JsxElement, tag: string) {
   return jsxElement.replaceWithText(newJsxText);
 }
 
-describe('tsx mutate test', () => {
+describe("tsx mutate test", () => {
   // it('should tsx mutate test', async () => {
   //   const sourceFile = await createTestSourceFile(code)
   //   const returnStatement = sourceFile.getFirstDescendantByKind(SyntaxKind.ReturnStatement);
@@ -39,20 +39,26 @@ describe('tsx mutate test', () => {
   //   }
   //
   // });
-  it('should wrap with custom tsx tag', async () => {
-    const sourceFile = await createTestTsxSourceFile(code)
+  it("should wrap with custom tsx tag", async () => {
+    const sourceFile = await createTestTsxSourceFile(code);
     // Find the return statement containing the JSX
-    const returnStatement = sourceFile.getFirstDescendantByKind(SyntaxKind.ReturnStatement);
-    const jsxElement = returnStatement?.getFirstDescendantByKind(SyntaxKind.JsxElement);
+    const returnStatement = sourceFile.getFirstDescendantByKind(
+      SyntaxKind.ReturnStatement,
+    );
+    const jsxElement = returnStatement?.getFirstDescendantByKind(
+      SyntaxKind.JsxElement,
+    );
 
     if (jsxElement) {
-      const tag = '__Test'
+      const tag = "__Test";
       const r = wrapWithTag(jsxElement, tag);
-      const xmlSourceCode = r.getText()
-      console.debug(xmlSourceCode)
-    }// Format the document to ensure proper indentation
+      const xmlSourceCode = r.getText();
+      console.warn(xmlSourceCode);
+    } // Format the document to ensure proper indentation
 
-    const returnedFormatted = sourceFile.getFirstDescendantByKind(SyntaxKind.ReturnStatement)?.getText()
+    const returnedFormatted = sourceFile
+      .getFirstDescendantByKind(SyntaxKind.ReturnStatement)
+      ?.getText();
 
     console.warn(returnedFormatted);
   });
