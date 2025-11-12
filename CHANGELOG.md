@@ -1,8 +1,60 @@
-# Changelog
-
-All notable changes to this project will be documented in this file.
-
 ## [unreleased]
+
+### 🚀 Features
+
+- Add renovate.json
+- Update deps
+- Add renovate config and github actions
+- Add scripts for Act and Renovate testing
+- Add .aider* files to gitignore
+- *(tsconfig)* Add updateCompilerOptionsTypes function
+- Add eslint warn for DX
+- Improve DX
+
+### 💼 Other
+
+- Update package versions in package.json
+- Add jsonc-parser dependency in package.json
+- Update dependencies in package.json
+- Add Renovate configuration for dependency updates
+- Update Renovate GitHub Action version to 39.2.4
+- Update renovate dependency version to 39.257.5
+- Update @types/node version in package.json
+- Add baseBranches to Renovate configuration
+- Update ts-morph and remove renovate dependency
+- Add baseBranches to Renovate configuration
+- Update ts-morph and remove renovate dependency
+- Update knip version in package.json
+
+### 🚜 Refactor
+
+- Add TODO for future implementation changes
+- Update knip config and export new utility function
+- *(tsconfig)* Rename and update tsconfig JSON handling
+- Rename error utility and update imports
+
+### 🧪 Testing
+
+- Update snapshots for vitest config tests
+- *(tsconfig-jsonc)* Add tests for updateCompilerOptionsTypes
+- Add TSX mutation tests and utility functions
+- *(parse-tsx)* Add tests for wrapWithTag function
+- *(parse-tsx)* Update test tag for jsx element wrapping
+
+### ⚙️ Miscellaneous Tasks
+
+- Update README and add tsconfig JSONC utilities
+- Update renovate workflow base branches setting
+- Update renovate configuration for automerge and autodiscover
+- *(package)* Update renovate to version 41.37.7
+- Disable dependency dashboard feature
+- Update Renovate configuration for dashboard settings
+- *(package)* Update renovate to version 41.37.7
+- *(.github)* Enable dependency dashboard feature
+- Add test utils
+- Update packages
+- Format files before release
+## [0.28.0] - 2025-04-17
 
 ### 🚀 Features
 
@@ -20,7 +72,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format files before release
-
+- Add CHANGELOG
 ## [0.27.0] - 2025-04-17
 
 ### 🚀 Features
@@ -31,7 +83,6 @@ All notable changes to this project will be documented in this file.
 
 - Format files before release
 - Add CHANGELOG
-
 ## [0.26.0] - 2025-04-15
 
 ### 🚜 Refactor
@@ -42,21 +93,18 @@ All notable changes to this project will be documented in this file.
 
 - Format files before release
 - Add CHANGELOG
-
 ## [0.25.0] - 2025-04-15
 
 ### ⚙️ Miscellaneous Tasks
 
 - Format files before release
 - Add CHANGELOG
-
 ## [0.24.0] - 2025-04-15
 
 ### ⚙️ Miscellaneous Tasks
 
 - Format files before release
 - Add CHANGELOG
-
 ## [0.23.0] - 2025-04-15
 
 ### ⚙️ Miscellaneous Tasks
@@ -65,7 +113,6 @@ All notable changes to this project will be documented in this file.
 - Add CHANGELOG
 - Format files before release
 - Add CHANGELOG
-
 ## [0.21.0] - 2025-04-15
 
 ### 🚀 Features
@@ -76,7 +123,6 @@ All notable changes to this project will be documented in this file.
 
 - Format files before release
 - Add CHANGELOG
-
 ## [0.20.0] - 2025-04-15
 
 ### 🚀 Features
@@ -87,7 +133,6 @@ All notable changes to this project will be documented in this file.
 
 - Format files before release
 - Add CHANGELOG
-
 ## [0.19.0] - 2025-04-15
 
 ### 🚀 Features
@@ -102,7 +147,6 @@ All notable changes to this project will be documented in this file.
 
 - Format files before release
 - Add CHANGELOG
-
 ## [0.18.0] - 2025-04-15
 
 ### 🚜 Refactor
@@ -121,7 +165,6 @@ All notable changes to this project will be documented in this file.
 
 - Format files before release
 - Add CHANGELOG
-
 ## [0.17.0] - 2025-04-15
 
 ### 🚀 Features
@@ -132,21 +175,18 @@ All notable changes to this project will be documented in this file.
 
 - Format files before release
 - Add CHANGELOG
-
 ## [0.16.0] - 2025-04-15
 
 ### ⚙️ Miscellaneous Tasks
 
 - Format files before release
 - Add CHANGELOG
-
 ## [0.15.0] - 2025-04-15
 
 ### ⚙️ Miscellaneous Tasks
 
 - Format files before release
 - Add CHANGELOG
-
 ## [0.14.0] - 2025-04-15
 
 ### 🎨 Styling
@@ -157,7 +197,6 @@ All notable changes to this project will be documented in this file.
 
 - Format files before release
 - Add CHANGELOG
-
 ## [0.13.0] - 2025-04-15
 
 ### 🚀 Features
@@ -173,7 +212,6 @@ All notable changes to this project will be documented in this file.
 
 - Format files before release
 - Add CHANGELOG
-
 ## [0.12.0] - 2025-03-18
 
 ### 🚀 Features
@@ -184,7 +222,6 @@ All notable changes to this project will be documented in this file.
 
 - Format files before release
 - Add CHANGELOG
-
 ## [0.11.0] - 2025-03-18
 
 ### 🚀 Features
@@ -195,7 +232,6 @@ All notable changes to this project will be documented in this file.
 
 - Format files before release
 - Add CHANGELOG
-
 ## [0.10.0] - 2025-03-18
 
 ### 🚀 Features
@@ -210,7 +246,6 @@ All notable changes to this project will be documented in this file.
 
 - Format files before release
 - Add CHANGELOG
-
 ## [0.9.0] - 2025-03-18
 
 ### 🎨 Styling
@@ -227,7 +262,6 @@ All notable changes to this project will be documented in this file.
 - Lint remove semi columns
 - Format files before release
 - Add CHANGELOG
-
 ## [0.8.0] - 2025-03-18
 
 ### 💼 Other
@@ -238,7 +272,6 @@ All notable changes to this project will be documented in this file.
 
 - Format files before release
 - Add CHANGELOG
-
 ## [0.7.0] - 2025-03-18
 
 ### 🚀 Features
@@ -260,7 +293,6 @@ All notable changes to this project will be documented in this file.
 - Simplify publish scripts in package.json
 - Format files before release
 - Add CHANGELOG
-
 ## [0.6.0] - 2025-03-18
 
 ### ⚙️ Miscellaneous Tasks
@@ -268,7 +300,6 @@ All notable changes to this project will be documented in this file.
 - Update package.json dependencies and scripts
 - Format files before release
 - Add CHANGELOG
-
 ## [0.5.0] - 2025-03-18
 
 ### 💼 Other
@@ -279,14 +310,12 @@ All notable changes to this project will be documented in this file.
 
 - Format files before release
 - Add CHANGELOG
-
 ## [0.4.0] - 2025-03-17
 
 ### ⚙️ Miscellaneous Tasks
 
 - Format files before release
 - Add CHANGELOG
-
 ## [0.3.0] - 2025-03-17
 
 ### ⚙️ Miscellaneous Tasks
@@ -294,7 +323,6 @@ All notable changes to this project will be documented in this file.
 - Update release-it configuration and package scripts
 - Format files before release
 - Add CHANGELOG
-
 ## [0.2.0] - 2025-03-17
 
 ### 🚀 Features
@@ -339,5 +367,3 @@ All notable changes to this project will be documented in this file.
 - Add initial release-it configuration file
 - Format files before release
 - Add CHANGELOG
-
-<!-- generated by git-cliff -->
