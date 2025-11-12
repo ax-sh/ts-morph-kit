@@ -1,9 +1,7 @@
 import type { KnipConfig } from "knip"
 
 const config: KnipConfig = {
-  ignore: [
-    "src/utils/test-utils.ts",
-  ], // : ['createMemorySourceFile'],
+  ignore: ["src/utils/test-utils.ts"], // : ['createMemorySourceFile'],
   ignoreDependencies: [
     "@vitest/coverage-v8",
     "@biomejs/biome",

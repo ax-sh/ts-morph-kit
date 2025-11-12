@@ -20,18 +20,21 @@ export async function createTestSourceFile(code: string) {
   return sourceFile
 }
 
-export async function createMemoryTsxSourceFile(tempFile: string, code: string) {
-  const project = createProject({ useInMemoryFileSystem: true, compilerOptions: {
-    // jsx: JsxEmit.ReactJSX
-  } })
-
-  const sourceFile = project.createSourceFile(
-    tempFile,
-    code,
-    {
-      scriptKind: path.extname(tempFile) === ".tsx" ? ScriptKind.TSX : ScriptKind.JSX,
+export async function createMemoryTsxSourceFile(
+  tempFile: string,
+  code: string,
+) {
+  const project = createProject({
+    useInMemoryFileSystem: true,
+    compilerOptions: {
+      // jsx: JsxEmit.ReactJSX
     },
-  )
+  })
+
+  const sourceFile = project.createSourceFile(tempFile, code, {
+    scriptKind:
+      path.extname(tempFile) === ".tsx" ? ScriptKind.TSX : ScriptKind.JSX,
+  })
   return sourceFile
 }
 

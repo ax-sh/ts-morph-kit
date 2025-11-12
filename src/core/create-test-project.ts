@@ -35,11 +35,18 @@ export function createReactComponent(
     isDefaultExport?: boolean
   } = {},
 ) {
-  const { props = {}, body = "return null;", isDefaultExport = false } = options
+  const {
+    props = {},
+    body = "return null;",
+    isDefaultExport = false,
+  } = options
 
-  const propsInterface = Object.entries(props).length > 0
-    ? `interface ${name}Props {\n  ${Object.entries(props).map(([k, v]) => `${k}: ${v};`).join("\n  ")}\n}`
-    : `interface ${name}Props {}`
+  const propsInterface
+    = Object.entries(props).length > 0
+      ? `interface ${name}Props {\n  ${Object.entries(props)
+        .map(([k, v]) => `${k}: ${v};`)
+        .join("\n  ")}\n}`
+      : `interface ${name}Props {}`
 
   const content = `
 import React from 'react';

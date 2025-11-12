@@ -1,4 +1,9 @@
-import type { EditResult, JSONPath, ModificationOptions, ParseError } from "jsonc-parser"
+import type {
+  EditResult,
+  JSONPath,
+  ModificationOptions,
+  ParseError,
+} from "jsonc-parser"
 import { applyEdits, modify, parse } from "jsonc-parser"
 
 // More complete type definition with optional fields
@@ -57,7 +62,10 @@ export function modifyCompilerOptionsTypes(
   return modify(rawJsonString, jsonPath, [...types], options)
 }
 
-export function updateCompilerOptionsTypes(rawJsonString: string, newTypesToAdd: string[]) {
+export function updateCompilerOptionsTypes(
+  rawJsonString: string,
+  newTypesToAdd: string[],
+) {
   const existingTypes = parseCompilerOptionsTypes(rawJsonString)
 
   // Filter out duplicates by creating a Set
