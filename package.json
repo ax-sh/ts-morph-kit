@@ -43,7 +43,8 @@
     "renovate:validate": "bunx --yes --package renovate -- renovate-config-validator",
     "renovate:gh-status": "gh run list --workflow=renovate.yml",
     "renovate:gh-log": "gh run view --log",
-    "renovate:run": "gh workflow run renovate.yml --ref develop"
+    "renovate:run": "gh workflow run renovate.yml --ref develop",
+    "pr:dev-to-master": "gh pr create --base master --head develop --fill"
   },
   "peerDependencies": {
     "typescript": "^5.8.3"
