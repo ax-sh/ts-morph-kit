@@ -48,11 +48,12 @@ describe('tsx mutate test', () => {
     if (jsxElement) {
       const tag = '__Test'
       const r = wrapWithTag(jsxElement, tag);
-      console.log(r.getText())
+      const xmlSourceCode = r.getText()
+      console.debug(xmlSourceCode)
     }// Format the document to ensure proper indentation
 
-    const xml = sourceFile.getFirstDescendantByKind(SyntaxKind.ReturnStatement)?.getText()
+    const returnedFormatted = sourceFile.getFirstDescendantByKind(SyntaxKind.ReturnStatement)?.getText()
 
-    console.log(xml);
+    console.warn(returnedFormatted);
   });
 });
